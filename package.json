@@ -1,0 +1,31 @@
+{
+    "name": "oc-p6-new-ybdlassablere",
+    "version": "1.0.0",
+    "description": "Projet n°6 du parcours front-end OpenClassRooms",
+    "main": "index.html",
+    "scripts": {
+        "sass": "sass --watch ./src/sass/:./public/css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/laticauda-64/Front-End-Fisheye.git"
+    },
+    "keywords": [
+        "fisheye",
+        "fish",
+        "eye"
+    ],
+    "author": "Yoann BDL",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/laticauda-64/Front-End-Fisheye/issues"
+    },
+    "homepage": "https://github.com/laticauda-64/Front-End-Fisheye#readme",
+    "devDependencies": {
+        "eslint": "^8.2.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-html": "^6.2.0",
+        "prettier": "^2.4.1",
+        "sass": "^1.43.4"
+    }
+}
