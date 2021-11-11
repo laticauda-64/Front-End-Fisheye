@@ -1,6 +1,7 @@
-# Base de code du projet P6 - Parcours Front-end
+# Créez un site accessible pour une plateforme de photographes
+
+![](https://github.com/laticauda-64/ybdlassablere_06_10112021/blob/main/public/assets/images/logo.png)
 
 ## Démarrer le projet
 
-Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
-
+-
