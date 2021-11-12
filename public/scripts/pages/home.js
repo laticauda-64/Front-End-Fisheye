@@ -4,14 +4,14 @@ class App {
         this.$photographersSection = document.querySelector('.photographersSection');
 
         // Api data
-        this._data = new Api();
+        this._api = new Api();
 
         // Properties
         this._photographersList = [];
     }
 
     async getPhotographersList() {
-        const data = await this._data.fetchData();
+        const data = await this._api.fetchData();
         this._photographersList = data.photographers;
     }
 

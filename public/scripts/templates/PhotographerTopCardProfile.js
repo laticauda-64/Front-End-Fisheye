@@ -1,12 +1,14 @@
-class PhotographerProfileFactory {
-    constructor({ infos, work }) {
-        this._infos = infos;
-        this._work = work;
+/* * * * * * * * * * * * * * * * * * * * * */
+/*  Big Card Profile on Photographer Page  */
+/* * * * * * * * * * * * * * * * * * * * * */
 
+class PhotographerTopCardProfile {
+    constructor(infos) {
+        this._infos = infos;
         this.$main = document.getElementById('main');
     }
 
-    createCard() {
+    render() {
         const { name, id, city, country, tagline, price, portrait } = this._infos;
         const card = `
             <article class="photographer__profileCard">
