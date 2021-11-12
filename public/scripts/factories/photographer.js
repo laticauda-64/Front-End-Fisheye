@@ -5,13 +5,17 @@ function photographerFactory(data) {
 
     function getUserCardDOM() {
         const article = document.createElement('article');
+        article.classList.add('photographersList_profile');
+        article.dataset.id = id;
 
         const content = `
-        <img src="${picture}"></img>
-        <h2>${name}</h2>
-        <p>${city}</p>
-        <p>${tagline}</p>
-        <p>${price}</p>
+        <a class="photographersList_profile_link" href="#">
+            <img src="${picture}" class="photographersList_profile_link_picture" alt=""></img>
+            <h2 class="photographersList_profile_link_name">${name}</h2>
+        </a>
+            <p class="photographersList_profile_location">${city}, ${country}</p>
+            <p class="photographersList_profile_description">${tagline}</p>
+            <p class="photographersList_profile_price">${price}€/jour</p>
         `;
 
         article.innerHTML = content;

@@ -2,7 +2,9 @@
 /* Variables CSS */
 /* * * * * * * * */
 
-$primary-dark-red: #901c1c;
-$primary-light-red: #d3573c;
-$secondary-dark-gray: #525252;
-$secondary-light-gray: #fafafa;
+:root {
+    --primary-dark-red: #901c1c;
+    --primary-light-red: #d3573c;
+    --secondary-dark-gray: #525252;
+    --secondary-light-gray: #fafafa;
+}

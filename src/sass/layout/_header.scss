@@ -3,11 +3,12 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 120px;
 }
 
 h1 {
-    color: #901c1c;
+    color: var(--primary-dark-red);
+    font-size: 36px;
     margin-right: 100px;
 }
 

@@ -5,7 +5,7 @@ async function getPhotographers(data) {
 }
 
 async function displayData(photographers) {
-    const photographersSection = document.querySelector('.photographer_section');
+    const photographersSection = document.querySelector('.photographersList');
 
     photographers.forEach((photographer) => {
         const photographerModel = photographerFactory(photographer);

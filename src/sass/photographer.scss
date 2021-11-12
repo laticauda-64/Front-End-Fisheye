@@ -1,4 +1,8 @@
-@use 'base/base';
-@use 'base/reset';
-@use 'layout/header';
-@use 'pages/photographer';
+@import 'base/reset';
+@import 'base/base';
+
+@import 'utils/variables';
+
+@import 'layout/header';
+
+@import 'pages/photographer';
