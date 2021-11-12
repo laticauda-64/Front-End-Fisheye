@@ -1,0 +1,19 @@
+@mixin button {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 69px;
+    border: none;
+    background-color: var(--primary-dark-red);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+
+    &:hover,
+    &:focus {
+        color: #000;
+        background: var(--primary-light-red);
+    }
+}

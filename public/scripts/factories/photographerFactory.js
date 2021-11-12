@@ -9,7 +9,7 @@ function photographerFactory(data) {
         article.dataset.id = id;
 
         const content = `
-        <a class="photographersList_profile_link" href="#">
+        <a class="photographersList_profile_link" href="photographer.html?id=${id}">
             <img src="${picture}" class="photographersList_profile_link_picture" alt=""></img>
             <h2 class="photographersList_profile_link_name">${name}</h2>
         </a>

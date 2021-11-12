@@ -99,23 +99,50 @@ h1 {
   display: none;
 }
 
-.photograph_profile {
+.photographer__profileCard {
   background-color: #fafafa;
   height: 300px;
   margin: 0 100px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 50px;
 }
-
-.contact_button {
-  font-size: 20px;
-  font-weight: bold;
+.photographer__profileCard__infos__name {
+  color: var(--primary-light-red);
+  font-size: 64px;
+}
+.photographer__profileCard__infos__location {
+  font-size: 24px;
+  color: var(--primary-dark-red);
+}
+.photographer__profileCard__infos__description {
+  font-size: 18px;
+  color: var(--secondary-dark-gray);
+  margin-top: 19px;
+}
+.photographer__profileCard__contactButton {
+  font-size: 18px;
+  font-weight: 700;
   color: white;
   padding: 11px;
   width: 170px;
-  height: 70px;
+  height: 69px;
   border: none;
-  background-color: #901c1c;
+  background-color: var(--primary-dark-red);
   border-radius: 5px;
   cursor: pointer;
+  margin: 0 auto;
+}
+.photographer__profileCard__contactButton:hover, .photographer__profileCard__contactButton:focus {
+  color: #000;
+  background: var(--primary-light-red);
+}
+.photographer__profileCard__picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-left: auto;
 }
 
 .modal {

@@ -4,26 +4,42 @@
     }
 }
 
-.photograph {
-    &_profile {
+.photographer {
+    &__profileCard {
         background-color: #fafafa;
         height: 300px;
         margin: 0 100px;
-    }
-}
-
-.contact {
-    &_button {
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
-        padding: 11px;
-        width: 170px;
-        height: 70px;
-        border: none;
-        background-color: #901c1c;
         border-radius: 5px;
-        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 0 50px;
+
+        &__infos {
+            &__name {
+                color: var(--primary-light-red);
+                font-size: 64px;
+            }
+            &__location {
+                font-size: 24px;
+                color: var(--primary-dark-red);
+            }
+            &__description {
+                font-size: 18px;
+                color: var(--secondary-dark-gray);
+                margin-top: 19px;
+            }
+        }
+
+        &__contactButton {
+            @include button;
+        }
+
+        &__picture {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin-left: auto;
+        }
     }
 }
 
