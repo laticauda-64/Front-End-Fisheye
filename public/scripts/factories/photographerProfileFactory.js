@@ -1,4 +1,4 @@
-class photographerProfileFactory {
+class PhotographerProfileFactory {
     constructor({ infos, work }) {
         this._infos = infos;
         this._work = work;

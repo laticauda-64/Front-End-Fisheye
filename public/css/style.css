@@ -95,46 +95,46 @@ h1 {
   margin-left: 100px;
 }
 
-.photographersList {
+.photographersSection {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
   margin-top: 80px;
 }
-.photographersList_profile {
+.photographersSection_profile {
   justify-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.photographersList_profile_link {
+.photographersSection_profile_link {
   text-align: center;
 }
-.photographersList_profile_link_picture {
+.photographersSection_profile_link_picture {
   height: 200px;
   width: 200px;
   border-radius: 50%;
   box-shadow: -2px 2px 20px rgba(0, 0, 0, 0.25);
   margin: 0 auto;
 }
-.photographersList_profile_link_name {
+.photographersSection_profile_link_name {
   color: var(--primary-light-red);
   font-size: 36px;
   font-weight: 400;
   margin-top: 20px;
 }
-.photographersList_profile p {
+.photographersSection_profile p {
   line-height: 1.6;
 }
-.photographersList_profile_location {
+.photographersSection_profile_location {
   font-size: 13px;
   color: var(--primary-dark-red);
 }
-.photographersList_profile_description {
+.photographersSection_profile_description {
   font-size: 10px;
 }
-.photographersList_profile_price {
+.photographersSection_profile_price {
   font-size: 9px;
   color: var(--secondary-dark-gray);
 }

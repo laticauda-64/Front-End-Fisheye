@@ -1,5 +1,5 @@
 class Api {
-    static async fetchData() {
+    async fetchData() {
         return fetch('http://127.0.0.1:5500/data/photographers.json')
             .then((res) => res.json())
             .then((res) => res)
