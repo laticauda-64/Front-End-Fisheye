@@ -80,6 +80,14 @@
             border-radius: 5px;
         }
         &__link {
+            display: inline-block;
+            position: relative;
+
+            &__playLogo {
+                position: absolute;
+                top: calc(50% - 75px);
+                left: calc(50% - 75px);
+            }
         }
         &__desc {
             font-size: 24px;

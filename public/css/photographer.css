@@ -195,6 +195,15 @@ h1 {
   object-fit: cover;
   border-radius: 5px;
 }
+.displayMediaSection__mediaCard__link {
+  display: inline-block;
+  position: relative;
+}
+.displayMediaSection__mediaCard__link__playLogo {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+}
 .displayMediaSection__mediaCard__desc {
   font-size: 24px;
   color: var(--primary-dark-red);

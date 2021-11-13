@@ -24,7 +24,7 @@ Servir le fichier index.html avec un serveur web (Live Server ?).
 -   [x] Créer l'architecture des dossiers/fichiers javascript pour respecter les patterns demandés
 -   [x] Mettre en place un système de routing pour la page "photographer.html" avec des query strings >> photographer.html?id=587
 -   [ ] Faire la "mini info bar" en sticky right bottom sur la page photogapher
--   [ ] Rajouter une petite icone indicative pour les vidéos
+-   [x] Rajouter une petite icone indicative pour les vidéos
 -   [ ] Gérer l'affichage des photos/vidéos dans UNE lighbox
 -   [ ] Finir le formulaire (html/css) et gérer le javascript associé
 -   [ ] Faire le responsive tablette + mobile
