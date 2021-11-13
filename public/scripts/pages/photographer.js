@@ -5,7 +5,7 @@ class App {
         this._photographerId = Object.fromEntries(this._urlQueryParams.entries()).id;
 
         // Nodes
-        this.$photographersSection = document.querySelector('.photographersSection');
+        this.$main = document.getElementById('main');
 
         // Api
         this._api = new Api();
@@ -36,6 +36,18 @@ class App {
         // Photographer profile top card
         const photographerProfil = new PhotographerTopCardProfile(this._photographerInfo);
         photographerProfil.render();
+
+        // Filter Field
+        const filterField = new FilterForm(this._photographerWork);
+        filterField.render();
+
+        // Photographers display media section
+        // récupere main
+        // créer un node et injecter ci dessous dedans
+        this._photographerWork.forEach((e) => {
+            const workTemplate = new PhotographerMedia(e);
+            workTemplate.render();
+        });
 
         // Exemple de flow
         // const Form = new FormModal(this.UserContext)

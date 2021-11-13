@@ -8,7 +8,6 @@
     &__profileCard {
         background-color: #fafafa;
         height: 300px;
-        margin: 0 100px;
         border-radius: 5px;
         display: flex;
         align-items: center;
@@ -40,6 +39,22 @@
             border-radius: 50%;
             margin-left: auto;
         }
+    }
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+    &__label {
+        font-size: 18px;
+        font-weight: 700;
+        padding-right: 50px;
+    }
+    &__input {
+        @include select;
+        margin: 0;
     }
 }
 

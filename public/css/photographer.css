@@ -102,7 +102,6 @@ h1 {
 .photographer__profileCard {
   background-color: #fafafa;
   height: 300px;
-  margin: 0 100px;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -143,6 +142,35 @@ h1 {
   height: 200px;
   border-radius: 50%;
   margin-left: auto;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.filter__label {
+  font-size: 18px;
+  font-weight: 700;
+  padding-right: 50px;
+}
+.filter__input {
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  padding: 11px;
+  width: 170px;
+  height: 69px;
+  border: none;
+  background-color: var(--primary-dark-red);
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  margin: 0;
+}
+.filter__input:hover, .filter__input:focus {
+  color: #000;
+  background: var(--primary-light-red);
 }
 
 .modal {
