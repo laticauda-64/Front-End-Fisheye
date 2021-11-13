@@ -4,17 +4,17 @@
     gap: 70px;
     margin-top: 80px;
 
-    &_profile {
+    &__profile {
         justify-self: center;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
 
-        &_link {
+        &__link {
             text-align: center;
 
-            &_picture {
+            &__picture {
                 height: 200px;
                 width: 200px;
                 border-radius: 50%;
@@ -22,7 +22,7 @@
                 margin: 0 auto;
             }
 
-            &_name {
+            &__name {
                 color: var(--primary-light-red);
                 font-size: 36px;
                 font-weight: 400;
@@ -34,16 +34,16 @@
             line-height: 1.6;
         }
 
-        &_location {
+        &__location {
             font-size: 13px;
             color: var(--primary-dark-red);
         }
 
-        &_description {
+        &__description {
             font-size: 10px;
         }
 
-        &_price {
+        &__price {
             font-size: 9px;
             color: var(--secondary-dark-gray);
         }
