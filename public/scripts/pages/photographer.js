@@ -42,12 +42,16 @@ class App {
         filterField.render();
 
         // Photographers display media section
-        // récupere main
-        // créer un node et injecter ci dessous dedans
+        const displayWorkSection = document.createElement('div');
+        displayWorkSection.classList.add('displayMediaSection');
+
         this._photographerWork.forEach((e) => {
+            console.log(e);
             const workTemplate = new PhotographerMedia(e);
-            workTemplate.render();
+            displayWorkSection.appendChild(workTemplate.render());
         });
+
+        this.$main.appendChild(displayWorkSection);
 
         // Exemple de flow
         // const Form = new FormModal(this.UserContext)

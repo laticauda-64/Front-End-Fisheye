@@ -92,7 +92,11 @@ h1 {
 
 .logo {
   height: 50px;
-  margin-left: 100px;
+  margin-left: 120px;
+}
+
+.logo {
+  margin-left: 0;
 }
 
 #contact_modal {
@@ -171,6 +175,32 @@ h1 {
 .filter__input:hover, .filter__input:focus {
   color: #000;
   background: var(--primary-light-red);
+}
+
+.displayMediaSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.displayMediaSection__mediaCard {
+  flex-basis: 30%;
+  margin-bottom: 20px;
+}
+.displayMediaSection__mediaCard__picture {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 5px;
+}
+.displayMediaSection__mediaCard__desc {
+  font-size: 24px;
+  color: var(--primary-dark-red);
+  display: flex;
+  padding-top: 10px;
+}
+.displayMediaSection__mediaCard__desc__likes {
+  font-weight: 500;
+  margin-left: auto;
 }
 
 .modal {

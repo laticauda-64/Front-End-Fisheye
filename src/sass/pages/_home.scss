@@ -1,15 +1,15 @@
 .photographersSection {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 70px;
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 80px;
 
     &__profile {
-        justify-self: center;
+        flex-basis: 33%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        margin-bottom: 80px;
 
         &__link {
             text-align: center;

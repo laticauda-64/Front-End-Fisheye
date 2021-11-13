@@ -92,21 +92,21 @@ h1 {
 
 .logo {
   height: 50px;
-  margin-left: 100px;
+  margin-left: 120px;
 }
 
 .photographersSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 70px;
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 80px;
 }
 .photographersSection__profile {
-  justify-self: center;
+  flex-basis: 33%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 80px;
 }
 .photographersSection__profile__link {
   text-align: center;
