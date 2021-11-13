@@ -19,11 +19,17 @@ Servir le fichier index.html avec un serveur web (Live Server ?).
 ## Plan du projet
 
 -   [x] Mettre en place la structure du projet et les dépendances/plugins et configurer le tout (sass, eslint, git, etc...)
--   [ ] Refaire un HTML propre avec tous les blocs nécessaires
--   [ ] Revoir le SASS et créer tous les blocs/éléments/variables nécéssaires
--   [ ] Créer l'architecture des dossiers/fichiers javascript pour respecter les patterns demandés
--   [ ] Mettre en place les fonctionnalités demandés
--   [ ] Mettre en place un système de routing pour la page "photographer.html" avec des query strings >> photographer.html?id=587
+-   [x] Refaire un HTML propre avec tous les blocs nécessaires
+-   [x] Revoir le SASS et créer tous les blocs/éléments/variables nécéssaires
+-   [x] Créer l'architecture des dossiers/fichiers javascript pour respecter les patterns demandés
+-   [x] Mettre en place un système de routing pour la page "photographer.html" avec des query strings >> photographer.html?id=587
+-   [ ] Faire la "mini info bar" en sticky right bottom sur la page photogapher
+-   [ ] Rajouter une petite icone indicative pour les vidéos
+-   [ ] Gérer l'affichage des photos/vidéos dans UNE lighbox
+-   [ ] Finir le formulaire (html/css) et gérer le javascript associé
+-   [ ] Faire le responsive tablette + mobile
+-   [ ] Finir le css du select filter et coder la fonctionnalité en JS
+-   [ ] Mettre en place l'accessibilité clavier
 
 ## Consignes détaillées
 
