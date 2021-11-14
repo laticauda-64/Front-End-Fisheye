@@ -28,6 +28,7 @@ Servir le fichier index.html avec un serveur web (Live Server ?).
 -   [ ] Gérer l'affichage des photos/vidéos dans UNE lighbox
 -   [ ] Finir le formulaire (html/css) et gérer le javascript associé
 -   [ ] Faire le responsive tablette + mobile
+-   [ ] Installer vite pour gérer le JS qui devient wild
 -   [ ] Finir le css du select filter et coder la fonctionnalité en JS
 -   [ ] Mettre en place l'accessibilité clavier
 

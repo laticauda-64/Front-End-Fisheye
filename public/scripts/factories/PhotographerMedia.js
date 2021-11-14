@@ -7,6 +7,12 @@ class PhotographerMedia {
         this._data = data;
     }
 
+    onClick(node) {
+        node.addEventListener('click', function (e) {
+            console.log(this);
+        });
+    }
+
     render() {
         const { id, photographerId, title, image, likes, date, price, video } = this._data;
 
@@ -19,8 +25,6 @@ class PhotographerMedia {
                 <video class="displayMediaSection__mediaCard__picture" title="">
                     <source src="public/assets/media/${video}" type="video/mp4">
                 </video>`;
-
-        console.log(thumbnail);
 
         const article = document.createElement('article');
         article.classList.add('displayMediaSection__mediaCard');
@@ -41,6 +45,8 @@ class PhotographerMedia {
         `;
 
         article.innerHTML = content;
+
+        this.onClick(article);
 
         return article;
     }

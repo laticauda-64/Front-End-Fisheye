@@ -105,6 +105,10 @@
     }
 }
 
+// Import the lighBox component
+@include lightBox;
+
+// Form modal component
 .modal {
     border-radius: 5px;
     background-color: #db8876;

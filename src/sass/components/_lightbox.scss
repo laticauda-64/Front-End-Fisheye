@@ -1,0 +1,73 @@
+@mixin lightBox {
+    .lightBoxModal {
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 13;
+        overflow: scroll;
+
+        &__nextButton,
+        &__prevButton {
+            cursor: pointer;
+            color: transparent;
+            right: 0;
+            background: url(/public/assets/icons/right-arrow-red.svg) center center / 30px 48px no-repeat;
+            width: 13%;
+            height: 100%;
+            position: fixed;
+            margin-top: 7px;
+            z-index: 11;
+        }
+
+        &__prevButton {
+            right: auto;
+            left: 0;
+            transform: rotate(180deg);
+        }
+
+        &__mainContainer {
+            position: relative;
+            width: clamp(290px, 70%, 100%);
+            margin: auto;
+        }
+
+        &__imgContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__media {
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 30%;
+            z-index: 12;
+        }
+
+        &__closeButton {
+            cursor: pointer;
+            color: transparent;
+            right: 0;
+            width: 20%;
+            height: 42px;
+            background: url(/public/assets/icons/close-red.svg) center center / 42px 42px no-repeat;
+            z-index: 12;
+            position: absolute;
+            top: 0;
+            right: -14%;
+        }
+
+        &__mediaDesc {
+            color: var(--primary-dark-red);
+            font-size: 24px;
+            margin-top: 14px;
+        }
+    }
+}

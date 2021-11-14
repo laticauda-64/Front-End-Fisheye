@@ -46,7 +46,6 @@ class App {
         displayWorkSection.classList.add('displayMediaSection');
 
         this._photographerWork.forEach((e) => {
-            console.log(e);
             const workTemplate = new PhotographerMedia(e);
             displayWorkSection.appendChild(workTemplate.render());
         });

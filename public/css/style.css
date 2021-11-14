@@ -49,6 +49,10 @@ fieldset {
   border: none;
 }
 
+button {
+  border: none;
+}
+
 html {
   font-size: 100%;
   font-family: "DM Sans", sans-serif;
