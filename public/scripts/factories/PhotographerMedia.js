@@ -48,7 +48,7 @@ class PhotographerMedia {
 
         article.innerHTML = content;
 
-        this.onClick(article.querySelector('.displayMediaSection__mediaCard__link'), { image, video });
+        this.onClick(article.querySelector('.displayMediaSection__mediaCard__link'), { id, image, video });
 
         return article;
     }
