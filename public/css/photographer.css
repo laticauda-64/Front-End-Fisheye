@@ -229,7 +229,6 @@ h1 {
   height: 100%;
   background: #fff;
   z-index: 13;
-  overflow: scroll;
 }
 .lightBoxModal__nextButton, .lightBoxModal__prevButton {
   cursor: pointer;
@@ -260,8 +259,8 @@ h1 {
 .lightBoxModal__media {
   border-radius: 5px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-height: 90vh;
+  object-fit: contain;
   object-position: 50% 30%;
   z-index: 12;
 }
@@ -275,7 +274,7 @@ h1 {
   z-index: 12;
   position: absolute;
   top: 0;
-  right: -14%;
+  right: -13%;
 }
 .lightBoxModal__mediaDesc {
   color: var(--primary-dark-red);

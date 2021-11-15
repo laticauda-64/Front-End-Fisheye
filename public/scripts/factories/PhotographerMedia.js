@@ -7,14 +7,16 @@ class PhotographerMedia {
         this._data = data;
     }
 
-    onClick(node) {
+    onClick(node, mediaSource) {
         node.addEventListener('click', function (e) {
-            console.log(this);
+            e.preventDefault();
+            const lightBox = new LightboxModal(mediaSource);
+            lightBox.render();
         });
     }
 
     render() {
-        const { id, photographerId, title, image, likes, date, price, video } = this._data;
+        const { id, title, image, likes, video } = this._data;
 
         const thumbnail = image
             ? `<img src="public/assets/media/${image}" class="displayMediaSection__mediaCard__picture" alt=""></img>`
@@ -46,7 +48,7 @@ class PhotographerMedia {
 
         article.innerHTML = content;
 
-        this.onClick(article);
+        this.onClick(article.querySelector('.displayMediaSection__mediaCard__link'), { image, video });
 
         return article;
     }
