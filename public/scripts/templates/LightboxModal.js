@@ -22,7 +22,13 @@ class LightboxModal {
     }
 
     buildMediaNode() {
-        return `/public/assets/media/${this._image}`;
+        const balise = this._photographerWork[this._currentIndex].image ? 'img' : 'video';
+        const source =
+            balise === 'img' ? this._photographerWork[this._currentIndex].image : this._photographerWork[this._currentIndex].video;
+
+        return `<${balise} class="lightBoxModal__media" src="/public/assets/media/${source}" ${
+            balise === 'video' ? 'controls="controls"' : ''
+        }></${balise}>`;
     }
 
     changeMedia(direction) {
@@ -67,7 +73,7 @@ class LightboxModal {
                 <button class="lightBoxModal__prevButton" tabindex="0">Image précédente</button>
                 <div class="lightBoxModal__mainContainer">
                     <div class="lightBoxModal__imgContainer">
-                        <img class="lightBoxModal__media" src=${this.buildMediaNode()}>
+                        ${this.buildMediaNode()}
                         <button class="lightBoxModal__closeButton" tabindex="0">Close dialog</button>
                     </div>
                     <h2 class="lightBoxModal__mediaDesc">Lonesome</h2>
