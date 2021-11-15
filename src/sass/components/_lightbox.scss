@@ -2,6 +2,7 @@
     .lightBoxModal {
         display: flex;
         align-items: center;
+        justify-content: center;
         position: fixed;
         top: 0;
         left: 0;
@@ -15,11 +16,9 @@
         &__prevButton {
             cursor: pointer;
             color: transparent;
-            right: 0;
             background: url(/public/assets/icons/right-arrow-red.svg) center center / 30px 48px no-repeat;
-            width: 13%;
+            width: 110px;
             height: 100%;
-            position: fixed;
             margin-top: 7px;
             z-index: 11;
         }
@@ -32,14 +31,9 @@
 
         &__mainContainer {
             position: relative;
-            width: clamp(290px, 70%, 100%);
-            margin: auto;
         }
 
         &__imgContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
         }
 
         &__media {
@@ -49,19 +43,20 @@
             object-fit: contain;
             object-position: 50% 30%;
             z-index: 12;
+            position: relative;
         }
 
         &__closeButton {
             cursor: pointer;
             color: transparent;
             right: 0;
-            width: 20%;
+            width: 42px;
             height: 42px;
             background: url(/public/assets/icons/close-red.svg) center center / 42px 42px no-repeat;
             z-index: 12;
             position: absolute;
             top: 0;
-            right: -13%;
+            right: -70px;
         }
 
         &__mediaDesc {
