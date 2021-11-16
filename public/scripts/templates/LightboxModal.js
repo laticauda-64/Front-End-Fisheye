@@ -52,7 +52,7 @@ class LightboxModal {
         document.querySelector('.lightBoxModal__closeButton').before(this.buildMediaNode());
     }
 
-    pressEchapKey = (e) => {
+    manageKeyPress = (e) => {
         switch (e.keyCode) {
             case 27:
                 this.deleteModal();
@@ -72,7 +72,7 @@ class LightboxModal {
 
     deleteModal = () => {
         this.$container.remove();
-        document.documentElement.removeEventListener('keydown', this.pressEchapKey);
+        document.documentElement.removeEventListener('keydown', this.manageKeyPress);
     };
 
     render() {
@@ -92,7 +92,7 @@ class LightboxModal {
 
         // Event listeners
         this.$container.querySelector('.lightBoxModal__closeButton').addEventListener('click', this.deleteModal);
-        document.documentElement.addEventListener('keydown', this.pressEchapKey);
+        document.documentElement.addEventListener('keydown', this.manageKeyPress);
 
         // Inject LightBox in DOM
         document.querySelector('body').appendChild(this.$container);
