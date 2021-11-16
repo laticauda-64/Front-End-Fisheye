@@ -1,3 +1,6 @@
+/* * * * * * * * * * * * * * * * * * * */
+/*  LightBox modal on Photograph page  */
+/* * * * * * * * * * * * * * * * * * * */
 class App {
     constructor() {
         // Query string parameters to display the correct subject
@@ -51,6 +54,9 @@ class App {
         });
 
         this.$main.appendChild(displayWorkSection);
+
+        // Handle contact Form Modal
+        new SwitchContactModal().addListeners();
 
         // Exemple de flow
         // const Form = new FormModal(this.UserContext)

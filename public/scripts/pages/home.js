@@ -1,3 +1,6 @@
+/* * * * * * * * * * * * * * * * * * * */
+/*  Main JS entry point for Home page  */
+/* * * * * * * * * * * * * * * * * * * */
 class App {
     constructor() {
         // Nodes
