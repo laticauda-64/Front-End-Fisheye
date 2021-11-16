@@ -21,18 +21,27 @@ class LightboxModal {
         console.log({ video, image });
     }
 
-    buildMediaNode() {
+    buildMediaNode(mode) {
         const balise = this._photographerWork[this._currentIndex].image ? 'img' : 'video';
         const source =
             balise === 'img' ? this._photographerWork[this._currentIndex].image : this._photographerWork[this._currentIndex].video;
 
-        return `<${balise} class="lightBoxModal__media" src="/public/assets/media/${source}" ${
-            balise === 'video' ? 'controls="controls"' : ''
-        }></${balise}>`;
+        if (mode === 'insert') {
+            return `<${balise} class="lightBoxModal__media" src="/public/assets/media/${source}" ${
+                balise === 'video' ? 'controls="controls"' : ''
+            }></${balise}>`;
+        }
+        const newNode = document.createElement(balise);
+        newNode.classList.add('lightBoxModal__media');
+        newNode.src = `/public/assets/media/${source}`;
+        newNode.controls = true;
+        return newNode;
     }
 
     changeMedia(direction) {
         this._currentIndex = direction === 'next' ? this._currentIndex + 1 : this._currentIndex - 1;
+        const currentMediaNode = document.querySelector('.lightBoxModal__media');
+        const mediaContainer = document.querySelector('.lightBoxModal__imgContainer');
 
         if (this._currentIndex < 0) {
             this._currentIndex = this._photographerWork.length - 1;
@@ -40,9 +49,8 @@ class LightboxModal {
             this._currentIndex = 0;
         }
 
-        this.$container.querySelector('.lightBoxModal__media').src = `/public/assets/media/${
-            app._photographerWork[this._currentIndex].image
-        }`;
+        currentMediaNode.remove();
+        document.querySelector('.lightBoxModal__closeButton').before(this.buildMediaNode());
     }
 
     pressEchapKey = (e) => {
@@ -73,7 +81,7 @@ class LightboxModal {
                 <button class="lightBoxModal__prevButton" tabindex="0">Image précédente</button>
                 <div class="lightBoxModal__mainContainer">
                     <div class="lightBoxModal__imgContainer">
-                        ${this.buildMediaNode()}
+                        ${this.buildMediaNode('insert')}
                         <button class="lightBoxModal__closeButton" tabindex="0">Close dialog</button>
                     </div>
                     <h2 class="lightBoxModal__mediaDesc">Lonesome</h2>
