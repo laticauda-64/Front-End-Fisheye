@@ -11,14 +11,11 @@ class LightboxModal {
 
         // Get the list of all photographers medias
         this._photographerWork = app._photographerWork;
-        console.log(this._photographerWork);
         // Find current index in photographers medias list, for navigation
         this._currentIndex = this._photographerWork.findIndex((e) => e.id === this._id);
         // Initialize lightbox modal node container
         this.$container = document.createElement('div');
         this.$container.classList.add('lightBoxModal');
-
-        console.log({ video, image });
     }
 
     buildMediaNode(mode) {
@@ -59,13 +56,11 @@ class LightboxModal {
                 break;
             case 39:
                 this.changeMedia('next');
-                console.log('next');
                 break;
             case 37:
                 this.changeMedia('prev');
                 break;
             default:
-                console.log(e.keyCode);
                 break;
         }
     };
