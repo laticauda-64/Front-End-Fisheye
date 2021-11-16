@@ -41,7 +41,6 @@ class LightboxModal {
     changeMedia(direction) {
         this._currentIndex = direction === 'next' ? this._currentIndex + 1 : this._currentIndex - 1;
         const currentMediaNode = document.querySelector('.lightBoxModal__media');
-        const mediaContainer = document.querySelector('.lightBoxModal__imgContainer');
 
         if (this._currentIndex < 0) {
             this._currentIndex = this._photographerWork.length - 1;
