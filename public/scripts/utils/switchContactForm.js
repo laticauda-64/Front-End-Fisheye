@@ -13,26 +13,15 @@ class SwitchContactModal {
     }
 
     triggerModal = (event) => {
-        switch (event.type) {
-            case 'click':
-                this._modalOpen = !this._modalOpen;
-                if (this._modalOpen) {
-                    this.$modalForm.style.display = 'flex';
-                    document.documentElement.addEventListener('keydown', this.triggerModal);
-                } else {
-                    this.$modalForm.style.display = 'none';
-                    document.documentElement.removeEventListener('keydown', this.triggerModal);
-                }
-                break;
-
-            case 'keydown':
-                if (event.keyCode === 27) {
-                    this.triggerModal({ type: 'click' });
-                }
-                break;
-
-            default:
-                break;
+        if (event.type === 'click' || event.keyCode === 27) {
+            this._modalOpen = !this._modalOpen;
+            if (this._modalOpen) {
+                this.$modalForm.style.display = 'flex';
+                document.documentElement.addEventListener('keydown', this.triggerModal);
+            } else {
+                this.$modalForm.style.display = 'none';
+                document.documentElement.removeEventListener('keydown', this.triggerModal);
+            }
         }
     };
 
