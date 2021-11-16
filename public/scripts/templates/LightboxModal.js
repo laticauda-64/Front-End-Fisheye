@@ -27,7 +27,7 @@ class LightboxModal {
             balise === 'img' ? this._photographerWork[this._currentIndex].image : this._photographerWork[this._currentIndex].video;
 
         if (mode === 'insert') {
-            return `<${balise} class="lightBoxModal__media" src="/public/assets/media/${source}" ${
+            return `<${balise} class="lightBoxModal__media" src="public/assets/media/${source}" ${
                 balise === 'video' ? 'controls="controls"' : ''
             }></${balise}>`;
         }
