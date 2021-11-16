@@ -33,7 +33,7 @@ class LightboxModal {
         }
         const newNode = document.createElement(balise);
         newNode.classList.add('lightBoxModal__media');
-        newNode.src = `/public/assets/media/${source}`;
+        newNode.src = `public/assets/media/${source}`;
         newNode.controls = true;
         return newNode;
     }
