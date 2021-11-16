@@ -14,21 +14,39 @@
             </a>
         </header>
         <main id="main"></main>
-        <div id="contact_modal">
-            <div class="modal">
-                <header>
-                    <h2>Contactez-moi</h2>
-                    <img src="public/assets/icons/close.svg" onclick="closeModal()" />
+        <section class="contactModal">
+            <div class="contactModal__content">
+                <header class="contactModal__content__header">
+                    <h2 class="contactModal__content__header__title">Contactez-moi Mimi Keel</h2>
+                    <img class="contactModal__content__header__closeIcon" src="public/assets/icons/close.svg" onclick="closeModal()" />
                 </header>
-                <form>
-                    <div>
-                        <label>Prénom</label>
-                        <input />
+                <form class="contactModal__content__form">
+                    <div class="contactModal__content__form__field">
+                        <label class="contactModal__content__form__label" for="firstname">Prénom</label>
+                        <input class="contactModal__content__form__input" type="text" name="firstname" id="firstname" />
                     </div>
-                    <button class="contact_button">Envoyer</button>
+                    <div class="contactModal__content__form__field">
+                        <label class="contactModal__content__form__label" for="name">Nom</label>
+                        <input class="contactModal__content__form__input" type="text" name="name" id="name" />
+                    </div>
+                    <div class="contactModal__content__form__field">
+                        <label class="contactModal__content__form__label" for="email">Email</label>
+                        <input class="contactModal__content__form__input" type="text" name="email" id="email" />
+                    </div>
+                    <div class="contactModal__content__form__field">
+                        <label class="contactModal__content__form__label" for="textarea">Votre message</label>
+                        <textarea
+                            class="contactModal__content__form__textaera"
+                            name="textarea"
+                            id="textarea"
+                            cols="30"
+                            rows="10"
+                        ></textarea>
+                    </div>
+                    <button class="contactModal__content__form__submit"">Envoyer</button>
                 </form>
             </div>
-        </div>
+        </section>
 
         <!-- Api -->
         <script src="public/scripts/api/Api.js"></script>

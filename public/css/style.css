@@ -53,6 +53,11 @@ button {
   border: none;
 }
 
+input,
+textarea {
+  font-family: "DM Sans", sans-serif;
+}
+
 html {
   font-size: 100%;
   font-family: "DM Sans", sans-serif;
