@@ -92,6 +92,12 @@ class LightboxModal {
 
         // Event listeners
         this.$container.querySelector('.lightBoxModal__closeButton').addEventListener('click', this.deleteModal);
+        this.$container.querySelector('.lightBoxModal__nextButton').addEventListener('click', () => {
+            this.changeMedia('next');
+        });
+        this.$container.querySelector('.lightBoxModal__prevButton').addEventListener('click', () => {
+            this.changeMedia('prev');
+        });
         document.documentElement.addEventListener('keydown', this.manageKeyPress);
 
         // Inject LightBox in DOM
