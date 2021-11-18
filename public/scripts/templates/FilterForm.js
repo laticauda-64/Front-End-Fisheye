@@ -194,20 +194,19 @@ class FilterForm {
                     new DisplayMediaSection(this._work.sort((a, b) => b.likes - a.likes)).render();
                     break;
                 case 'date':
-                    new DisplayMediaSection(
-                        this._work
-                            .map((e) => {
-                                e.date = new Date(e.date).getTime();
-                                return e;
-                            })
-                            .sort((a, b) => b.date - a.date)
-                    ).render();
+                    this._work.forEach((e) => {
+                        e.date = new Date(e.date).getTime();
+                        return e;
+                    });
+                    new DisplayMediaSection(this._work.sort((a, b) => b.date - a.date)).render();
                     break;
                 case 'title':
                     new DisplayMediaSection(this._work.sort((a, b) => a.title.localeCompare(b.title))).render();
                     break;
                 default:
                     break;
+                    // Change the main state in app for LigthBox modal correct order display
+                    app._photographerWork = this._work;
             }
             console.log(
                 this._work
