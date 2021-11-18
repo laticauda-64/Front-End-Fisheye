@@ -40,20 +40,9 @@
     }
 }
 
+// Filter element
 .filter {
-    display: flex;
-    align-items: center;
-    padding: 10px 0;
-
-    &__label {
-        font-size: 18px;
-        font-weight: 700;
-        padding-right: 50px;
-    }
-    &__input {
-        @include select;
-        margin: 0;
-    }
+    @include select;
 }
 
 .displayMediaSection {

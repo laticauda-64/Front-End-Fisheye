@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* * * * * * */
 /* Reset CSS */
 /* * * * * * */
@@ -157,29 +158,139 @@ h1 {
   display: flex;
   align-items: center;
   padding: 10px 0;
+  position: relative;
+}
+.isActive .filter__selectCustom__options {
+  display: block;
+}
+.isActive .filter__selectCustom__trigger::after {
+  transform: rotate(180deg);
 }
 .filter__label {
   font-size: 18px;
   font-weight: 700;
   padding-right: 50px;
 }
-.filter__input {
+.filter__wrapper {
+  position: relative;
+}
+.filter__selectNative, .filter__selectCustom {
+  position: relative;
+  width: 170px;
+}
+.filter__selectNative {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 0.8rem;
+  padding: 0rem 0.8rem;
+}
+.filter__selectNative, .filter__selectCustom__trigger {
   font-size: 18px;
   font-weight: 700;
   color: white;
-  padding: 11px;
+  padding: 20px;
   width: 170px;
   height: 69px;
   border: none;
   background-color: var(--primary-dark-red);
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 auto;
-  margin: 0;
+  display: flex;
+  align-items: center;
 }
-.filter__input:hover, .filter__input:focus {
+.filter__selectCustom__trigger {
+  position: relative;
+}
+.filter__selectCustom__trigger::after {
+  content: " ";
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 0.8rem;
+  width: 20px;
+  height: 20px;
+  background: url("../assets/icons/arrow.svg") center no-repeat;
+  transition: transform 500ms;
+}
+.filter__selectCustom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+.filter__selectCustom__option {
+  position: relative;
+  padding: 20px;
+  padding-top: 23px;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  border-top: 1px solid #fff;
+  height: 69px;
+}
+.filter__selectCustom__option:first-child {
+  border-top: none;
+  border-radius: 5px 5px 0 0;
+}
+.filter__selectCustom__option:first-child::after {
+  content: " ";
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 0.8rem;
+  width: 20px;
+  height: 20px;
+  background: url("../assets/icons/arrow.svg") center no-repeat;
+  transform: rotate(180deg);
+  animation: rotateArrow 500ms both;
+}
+@keyframes rotateArrow {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 180deg;
+  }
+}
+.filter__selectCustom__option:last-child {
+  border-radius: 0 0 5px 5px;
+}
+.filter__selectCustom__option.isHover, .filter__selectCustom__option:hover {
   color: #000;
   background: var(--primary-light-red);
+  cursor: pointer;
+}
+.filter__selectCustom__option.isHover::after, .filter__selectCustom__option:hover::after {
+  background: url("../assets/icons/arrow-blk.svg") center no-repeat;
+}
+.filter__selectCustom__option.isActive::before {
+  content: "✓";
+  font-size: 14px;
+  position: absolute;
+  left: 4px;
+  top: calc(50% - 7px);
+}
+.filter__selectCustom__options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--primary-dark-red);
+  z-index: 1;
+  display: none;
+}
+@media (hover: hover) {
+  .filter__selectCustom {
+    display: block;
+  }
+  .filter__selectNative:focus + .filter__selectCustom {
+    display: none;
+  }
+}
+.filter__selectNative:focus, .filter__selectCustom.isActive .filter__selectCustom__trigger {
+  outline: none;
 }
 
 .displayMediaSection {
