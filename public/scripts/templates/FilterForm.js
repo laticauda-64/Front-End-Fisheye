@@ -7,18 +7,6 @@ class FilterForm {
         this._work = work;
         this.$wrapper = document.createElement('section');
         this.$main = document.getElementById('main');
-
-        // Customized select dropdown
-        this.$selectNative;
-        this.$selectCustom;
-        this.$selectCustomTrigger;
-        this.$selectCustomOpts;
-        this.customOptsList;
-        this.optionsCount;
-        this.defaultLabel;
-
-        this.optionChecked = '';
-        this.optionHoveredIndex = -1;
     }
 
     customizedDropDownMenu = () => {
@@ -27,8 +15,11 @@ class FilterForm {
         this.$selectCustomTrigger = document.querySelector('.filter__selectCustom__trigger');
         this.$selectCustomOpts = document.querySelector('.filter__selectCustom__options');
         this.customOptsList = Array.from(this.$selectCustomOpts.children);
-        this.optionsCount = this.customOptsList.length;
+        this.optionsCount = this.customOptsList.length - 1;
         this.defaultLabel = this.$selectCustomTrigger.getAttribute('data-value');
+
+        this.optionChecked = '';
+        this.optionHoveredIndex = -1;
 
         const openSelectCustom = () => {
             this.$selectCustom.classList.add('isActive');
@@ -98,23 +89,33 @@ class FilterForm {
         };
 
         const supportKeyboardNavigation = (e) => {
+            console.log(e.keyCode);
+            // prevent page scrolling
+            if ([40, 38, 13, 32, 33, 34].includes(e.keyCode)) {
+                e.preventDefault();
+            }
             // press down -> go next
-            if (event.keyCode === 40 && this.optionHoveredIndex < this.optionsCount - 1) {
-                let index = this.optionHoveredIndex;
-                e.preventDefault(); // prevent page scrolling
-                updateCustomSelectHovered(this.optionHoveredIndex + 1);
+            if (e.keyCode === 40) {
+                updateCustomSelectHovered(this.optionHoveredIndex === this.optionsCount ? 0 : this.optionHoveredIndex + 1);
             }
 
             // press up -> go previous
-            if (event.keyCode === 38 && this.optionHoveredIndex > 0) {
-                e.preventDefault(); // prevent page scrolling
-                updateCustomSelectHovered(this.optionHoveredIndex - 1);
+            if (e.keyCode === 38) {
+                updateCustomSelectHovered(this.optionHoveredIndex === 0 ? this.optionsCount : this.optionHoveredIndex - 1);
+            }
+
+            // press pageDown -> go last
+            if (e.keyCode === 33) {
+                updateCustomSelectHovered(0);
+            }
+
+            // press pageUp -> go first
+            if (e.keyCode === 34) {
+                updateCustomSelectHovered(this.optionsCount);
             }
 
             // press Enter or space -> select the option
-            if (event.keyCode === 13 || event.keyCode === 32) {
-                e.preventDefault();
-
+            if (e.keyCode === 13 || e.keyCode === 32) {
                 const option = this.$selectCustomOpts.children[this.optionHoveredIndex];
                 const value = option && option.getAttribute('data-value');
 
@@ -126,7 +127,7 @@ class FilterForm {
             }
 
             // press ESC -> close selectCustom
-            if (event.keyCode === 27) {
+            if (e.keyCode === 27) {
                 closeSelectCustom();
             }
         };
