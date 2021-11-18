@@ -23,13 +23,12 @@ Servir le fichier index.html avec un serveur web (Live Server ?).
 -   [x] Revoir le SASS et créer tous les blocs/éléments/variables nécéssaires
 -   [x] Créer l'architecture des dossiers/fichiers javascript pour respecter les patterns demandés
 -   [x] Mettre en place un système de routing pour la page "photographer.html" avec des query strings >> photographer.html?id=587
--   [ ] Faire la "mini info bar" en sticky right bottom sur la page photogapher
 -   [x] Rajouter une petite icone indicative pour les vidéos
 -   [x] Gérer l'affichage des photos/vidéos dans UNE lighbox
 -   [x] Finir le formulaire (html/css) et gérer le javascript associé
+-   [x] Finir le css du select filter et coder la fonctionnalité en JS
+-   [ ] Faire la "mini info bar" en sticky right bottom sur la page photogapher
 -   [ ] Faire le responsive tablette + mobile
--   [ ] Installer vite pour gérer le JS qui devient wild
--   [ ] Finir le css du select filter et coder la fonctionnalité en JS
 -   [ ] Mettre en place l'accessibilité clavier
 
 ## Consignes détaillées

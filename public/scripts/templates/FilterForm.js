@@ -200,7 +200,7 @@ class FilterForm {
                                 e.date = new Date(e.date).getTime();
                                 return e;
                             })
-                            .sort((a, b) => a.date - b.date)
+                            .sort((a, b) => b.date - a.date)
                     ).render();
                     break;
                 case 'title':
@@ -209,7 +209,14 @@ class FilterForm {
                 default:
                     break;
             }
-            // console.log(this._work.sort((a, b) => a.title.localeCompare(b.title)));
+            console.log(
+                this._work
+                    .map((e) => {
+                        e.date = new Date(e.date).getTime();
+                        return e;
+                    })
+                    .sort((a, b) => a.date - b.date)
+            );
         });
     };
 
