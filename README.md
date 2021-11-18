@@ -28,6 +28,7 @@ Servir le fichier index.html avec un serveur web (Live Server ?).
 -   [x] Finir le formulaire (html/css) et gérer le javascript associé
 -   [x] Finir le css du select filter et coder la fonctionnalité en JS
 -   [ ] Faire la "mini info bar" en sticky right bottom sur la page photogapher
+-   [ ] Construire le système de like sur les mediaCards
 -   [ ] Faire le responsive tablette + mobile
 -   [ ] Mettre en place l'accessibilité clavier
 
