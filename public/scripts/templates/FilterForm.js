@@ -18,7 +18,9 @@ class FilterForm {
         this.optionsCount = this.customOptsList.length - 1;
         this.defaultLabel = this.$selectCustomTrigger.getAttribute('data-value');
 
-        this.optionChecked = '';
+        this.optionChecked = this.$selectCustomOpts.children[0].getAttribute('data-value');
+        this.lastOptionChecked = this.optionChecked;
+        this.$selectCustomOpts.children[0].classList.add('isActive');
         this.optionHoveredIndex = -1;
 
         const openSelectCustom = () => {
@@ -64,9 +66,9 @@ class FilterForm {
         };
 
         const updateCustomSelectChecked = (value, text) => {
-            const prevValue = this.optionChecked;
+            this.lastOptionChecked = this.optionChecked;
 
-            const elPrevOption = this.$selectCustomOpts.querySelector(`[data-value="${prevValue}"`);
+            const elPrevOption = this.$selectCustomOpts.querySelector(`[data-value="${this.lastOptionChecked}"`);
             const elOption = this.$selectCustomOpts.querySelector(`[data-value="${value}"`);
 
             if (elPrevOption) {
@@ -82,7 +84,7 @@ class FilterForm {
         };
 
         const watchClickOutside = (e) => {
-            const didClickedOutside = !this.$selectCustom.contains(event.target);
+            const didClickedOutside = !this.$selectCustom.contains(e.target);
             if (didClickedOutside) {
                 closeSelectCustom();
             }
@@ -138,6 +140,8 @@ class FilterForm {
             const value = e.target.value;
             const elRespectiveCustomOption = this.$selectCustomOpts.querySelectorAll(`[data-value="${value}"]`)[0];
 
+            console.log(value);
+
             updateCustomSelectChecked(value, elRespectiveCustomOption.textContent);
         });
 
@@ -160,6 +164,7 @@ class FilterForm {
 
                 // Sync native select to have the same value
                 this.$selectNative.value = value;
+                this.$selectNative.dispatchEvent(new Event('change'));
                 updateCustomSelectChecked(value, e.target.textContent);
                 closeSelectCustom();
             });
@@ -172,14 +177,47 @@ class FilterForm {
         });
     };
 
-    onChangeFilter() {
-        // Ici event listenners pour gérer la sélection d'un critère de filtre
-    }
+    onChangeFilterData = () => {
+        // Rebuild displayMedia section when select filter change
 
-    clearMoviesWrapper() {
-        // Ici fonction pour effacer la liste des travaux
-        // this.$moviesWrapper.innerHTML = ""
-    }
+        this.$selectNative.addEventListener('change', (e) => {
+            // If same option checked again, dont trigger nothing
+
+            if (e.target.value === this.lastOptionChecked) {
+                return;
+            }
+
+            this.clearMoviesWrapper();
+
+            switch (e.target.value) {
+                case 'popular':
+                    new DisplayMediaSection(this._work.sort((a, b) => b.likes - a.likes)).render();
+                    break;
+                case 'date':
+                    new DisplayMediaSection(
+                        this._work
+                            .map((e) => {
+                                e.date = new Date(e.date).getTime();
+                                return e;
+                            })
+                            .sort((a, b) => a.date - b.date)
+                    ).render();
+                    break;
+                case 'title':
+                    new DisplayMediaSection(this._work.sort((a, b) => a.title.localeCompare(b.title))).render();
+                    break;
+                default:
+                    break;
+            }
+            // console.log(this._work.sort((a, b) => a.title.localeCompare(b.title)));
+        });
+    };
+
+    clearMoviesWrapper = () => {
+        // Clear the displayMedia section
+        const displayMediaSection = document.querySelector('.displayMediaSection');
+        displayMediaSection.remove();
+    };
 
     render() {
         this.$wrapper.classList.add('filter');
@@ -207,9 +245,9 @@ class FilterForm {
         `;
 
         this.$wrapper.innerHTML = filterForm;
-        // this.onChangeFilter();
-
         this.$main.appendChild(this.$wrapper);
+
         this.customizedDropDownMenu();
+        this.onChangeFilterData();
     }
 }

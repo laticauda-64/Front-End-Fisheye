@@ -30,7 +30,8 @@ class App {
         const data = await this._api.fetchData();
         const id = this.getIdFromUrl();
         this._photographerInfo = data.photographers.find((e) => e.id === id);
-        this._photographerWork = data.media.filter((e) => e.photographerId === id);
+        // By default, sort work by popularity (likes)
+        this._photographerWork = data.media.filter((e) => e.photographerId === id).sort((a, b) => b.likes - a.likes);
     }
 
     async main() {
@@ -45,15 +46,8 @@ class App {
         filterField.render();
 
         // Photographers display media section
-        const displayWorkSection = document.createElement('div');
-        displayWorkSection.classList.add('displayMediaSection');
-
-        this._photographerWork.forEach((e) => {
-            const workTemplate = new PhotographerMedia(e);
-            displayWorkSection.appendChild(workTemplate.render());
-        });
-
-        this.$main.appendChild(displayWorkSection);
+        const displayMediaSection = new DisplayMediaSection(this._photographerWork);
+        displayMediaSection.render();
 
         // Handle contact Form Modal
         new SwitchContactModal().addListeners();
