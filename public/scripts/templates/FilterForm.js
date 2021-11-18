@@ -91,7 +91,6 @@ class FilterForm {
         };
 
         const supportKeyboardNavigation = (e) => {
-            console.log(e.keyCode);
             // prevent page scrolling
             if ([40, 38, 13, 32, 33, 34].includes(e.keyCode)) {
                 e.preventDefault();
@@ -139,9 +138,6 @@ class FilterForm {
         this.$selectNative.addEventListener('change', (e) => {
             const value = e.target.value;
             const elRespectiveCustomOption = this.$selectCustomOpts.querySelectorAll(`[data-value="${value}"]`)[0];
-
-            console.log(value);
-
             updateCustomSelectChecked(value, elRespectiveCustomOption.textContent);
         });
 
@@ -208,14 +204,6 @@ class FilterForm {
                     // Change the main state in app for LigthBox modal correct order display
                     app._photographerWork = this._work;
             }
-            console.log(
-                this._work
-                    .map((e) => {
-                        e.date = new Date(e.date).getTime();
-                        return e;
-                    })
-                    .sort((a, b) => a.date - b.date)
-            );
         });
     };
 
