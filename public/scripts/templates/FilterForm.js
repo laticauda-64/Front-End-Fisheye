@@ -16,7 +16,6 @@ class FilterForm {
         this.$selectCustomOpts = document.querySelector('.filter__selectCustom__options');
         this.customOptsList = Array.from(this.$selectCustomOpts.children);
         this.optionsCount = this.customOptsList.length - 1;
-        this.defaultLabel = this.$selectCustomTrigger.getAttribute('data-value');
 
         this.optionChecked = this.$selectCustomOpts.children[0].getAttribute('data-value');
         this.lastOptionChecked = this.optionChecked;
