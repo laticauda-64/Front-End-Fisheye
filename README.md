@@ -31,6 +31,7 @@ Servir le fichier index.html avec un serveur web (Live Server ?).
 -   [x] Construire le système de like sur les mediaCards
 -   [ ] Faire le responsive tablette + mobile
 -   [ ] Mettre en place l'accessibilité clavier
+-   [ ] Corriger BUG compteur de likes HS quand filtre
 
 ## Consignes détaillées
 
