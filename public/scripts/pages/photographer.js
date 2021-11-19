@@ -16,6 +16,7 @@ class App {
         // Properties
         this._photographerInfo = {};
         this._photographerWork = [];
+        this._totalLikes;
     }
 
     getIdFromUrl() {
@@ -32,13 +33,14 @@ class App {
         this._photographerInfo = data.photographers.find((e) => e.id === id);
         // By default, sort work by popularity (likes)
         this._photographerWork = data.media.filter((e) => e.photographerId === id).sort((a, b) => b.likes - a.likes);
+        this._totalLikes = this._photographerWork.reduce((a, b) => a + b.likes, 0);
     }
 
     async main() {
         await this.fetchPhotographer();
 
-        // Photographer profile top card
-        const photographerProfil = new PhotographerTopCardProfile(this._photographerInfo);
+        // Photographer profile top card & static mini bar
+        const photographerProfil = new PhotographerTopCardProfile(this._photographerInfo, this._totalLikes);
         photographerProfil.render();
 
         // Filter Field
@@ -51,6 +53,10 @@ class App {
 
         // Handle contact Form Modal
         new SwitchContactModal().addListeners();
+
+        // Likes system
+        const handleLikes = new Likes(this._totalLikes);
+        handleLikes.init();
 
         // Exemple de flow
         // const Form = new FormModal(this.UserContext)

@@ -38,6 +38,32 @@
             margin-left: auto;
         }
     }
+
+    &__stickyMiniBar {
+        display: flex;
+        align-items: center;
+        background-color: var(--secondary-light-red);
+        font-size: 24px;
+        font-weight: 500;
+        width: 376px;
+        padding: 21px 31px 10px 31px;
+        border-radius: 5px 5px 0 0;
+        position: fixed;
+        right: 36px;
+        bottom: 0;
+        z-index: 8;
+
+        &__likes {
+        }
+
+        svg {
+            margin-left: 6px;
+        }
+
+        &__price {
+            margin-left: auto;
+        }
+    }
 }
 
 // Filter element
@@ -76,13 +102,23 @@
             font-size: 24px;
             color: var(--primary-dark-red);
             display: flex;
+            align-items: center;
             padding-top: 10px;
+
+            &__likesCont {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+                cursor: pointer;
+            }
 
             &__title {
             }
             &__likes {
                 font-weight: 500;
-                margin-left: auto;
+            }
+            svg {
+                margin-left: 5px;
             }
         }
     }

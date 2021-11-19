@@ -84,6 +84,7 @@ h2 {
   --primary-light-red: #d3573c;
   --secondary-dark-gray: #525252;
   --secondary-light-gray: #fafafa;
+  --secondary-light-red: #db8876;
 }
 
 header {
@@ -145,12 +146,32 @@ h1 {
 }
 .photographer__profileCard__contactButton:hover, .photographer__profileCard__contactButton:focus {
   color: #000;
-  background: var(--primary-light-red);
+  background: var(--secondary-light-red);
 }
 .photographer__profileCard__picture {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  margin-left: auto;
+}
+.photographer__stickyMiniBar {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-light-red);
+  font-size: 24px;
+  font-weight: 500;
+  width: 376px;
+  padding: 21px 31px 10px 31px;
+  border-radius: 5px 5px 0 0;
+  position: fixed;
+  right: 36px;
+  bottom: 0;
+  z-index: 8;
+}
+.photographer__stickyMiniBar svg {
+  margin-left: 6px;
+}
+.photographer__stickyMiniBar__price {
   margin-left: auto;
 }
 
@@ -258,7 +279,7 @@ h1 {
 }
 .filter__selectCustom__option.isHover, .filter__selectCustom__option:hover {
   color: #000;
-  background: var(--primary-light-red);
+  background: var(--secondary-light-red);
   cursor: pointer;
 }
 .filter__selectCustom__option.isHover::after, .filter__selectCustom__option:hover::after {
@@ -324,11 +345,20 @@ h1 {
   font-size: 24px;
   color: var(--primary-dark-red);
   display: flex;
+  align-items: center;
   padding-top: 10px;
+}
+.displayMediaSection__mediaCard__desc__likesCont {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  cursor: pointer;
 }
 .displayMediaSection__mediaCard__desc__likes {
   font-weight: 500;
-  margin-left: auto;
+}
+.displayMediaSection__mediaCard__desc svg {
+  margin-left: 5px;
 }
 
 .lightBoxModal {
@@ -400,7 +430,7 @@ h1 {
 }
 .contactModal__content {
   border-radius: 5px;
-  background-color: #db8876;
+  background-color: var(--secondary-light-red);
   width: 670px;
   display: flex;
   flex-direction: column;
@@ -464,7 +494,7 @@ h1 {
 }
 .contactModal__content__form__submit:hover, .contactModal__content__form__submit:focus {
   color: #000;
-  background: var(--primary-light-red);
+  background: var(--secondary-light-red);
 }
 
 /*# sourceMappingURL=photographer.css.map */
