@@ -1,0 +1,20 @@
+$breakpoints: (
+    mobile: 375px,
+    tablets: 768px,
+    desktop: 1024px,
+);
+
+@mixin media-query($key) {
+    $size: map-get($breakpoints, $key);
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+// Utilisation :
+
+// @include media-query('mobile') {
+//     background: red;
+//     margin: 0;
+//     gap: 20px;
+// }
