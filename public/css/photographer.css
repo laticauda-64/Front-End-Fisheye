@@ -348,14 +348,21 @@ h1 {
   align-items: center;
   padding-top: 10px;
 }
-.displayMediaSection__mediaCard__desc__likesCont {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-  cursor: pointer;
-}
 .displayMediaSection__mediaCard__desc__likes {
   font-weight: 500;
+  padding-right: 21px;
+  position: relative;
+  cursor: pointer;
+  margin-left: auto;
+}
+.displayMediaSection__mediaCard__desc__likes::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 10px);
+  right: 0;
+  width: 19px;
+  height: 19px;
+  background: url(../assets/icons/heart-red.svg) center no-repeat;
 }
 .displayMediaSection__mediaCard__desc svg {
   margin-left: 5px;
