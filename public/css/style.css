@@ -75,6 +75,10 @@ h2 {
   font-weight: 400;
 }
 
+#main {
+  padding-bottom: 75px;
+}
+
 /* * * * * * * * */
 /* Variables CSS */
 /* * * * * * * * */
