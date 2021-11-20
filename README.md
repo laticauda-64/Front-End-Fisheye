@@ -29,9 +29,9 @@ Servir le fichier index.html avec un serveur web (Live Server ?).
 -   [x] Finir le css du select filter et coder la fonctionnalité en JS
 -   [x] Faire la "mini info bar" en sticky right bottom sur la page photogapher
 -   [x] Construire le système de like sur les mediaCards
+-   [x] Corriger BUG compteur de likes HS quand filtre
 -   [ ] Faire le responsive tablette + mobile
 -   [ ] Mettre en place l'accessibilité clavier
--   [ ] Corriger BUG compteur de likes HS quand filtre
 
 ## Consignes détaillées
 
