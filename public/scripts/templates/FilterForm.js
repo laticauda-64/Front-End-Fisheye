@@ -173,7 +173,7 @@ class FilterForm {
     };
 
     onChangeFilterData = () => {
-        // Rebuild displayMedia section when select filter change
+        // Reorder displayMedia section when select filter change
 
         this.$selectNative.addEventListener('change', (e) => {
             // If same option checked again, dont trigger nothing
@@ -181,35 +181,55 @@ class FilterForm {
             if (e.target.value === this.lastOptionChecked) {
                 return;
             }
+            const $mediaCardsNodes = Array.from(document.querySelectorAll('.displayMediaSection__mediaCard'));
 
-            this.clearMoviesWrapper();
+            console.log($mediaCardsNodes);
 
+            // Change state & nodes order for each case
             switch (e.target.value) {
                 case 'popular':
-                    new DisplayMediaSection(this._work.sort((a, b) => b.likes - a.likes)).render();
+                    this._work.sort((a, b) => b.likes - a.likes);
+                    $mediaCardsNodes.sort(
+                        (a, b) =>
+                            parseInt(b.querySelector('.displayMediaSection__mediaCard__desc__likes').textContent) -
+                            parseInt(a.querySelector('.displayMediaSection__mediaCard__desc__likes').textContent)
+                    );
+                    $mediaCardsNodes.forEach((e, i) => {
+                        e.style.order = i;
+                    });
+                    app._photographerWork = this._work;
                     break;
                 case 'date':
-                    this._work.forEach((e) => {
-                        e.date = new Date(e.date).getTime();
-                        return e;
+                    this._work.sort((a, b) => b.date - a.date);
+
+                    $mediaCardsNodes.sort((a, b) => {
+                        const first = parseInt(a.dataset.date);
+                        const second = parseInt(b.dataset.date);
+                        return second - first;
                     });
-                    new DisplayMediaSection(this._work.sort((a, b) => b.date - a.date)).render();
+
+                    $mediaCardsNodes.forEach((e, i) => {
+                        e.style.order = i;
+                    });
+
+                    app._photographerWork = this._work;
                     break;
                 case 'title':
-                    new DisplayMediaSection(this._work.sort((a, b) => a.title.localeCompare(b.title))).render();
-                    break;
+                    this._work.sort((a, b) => a.title.localeCompare(b.title));
+                    $mediaCardsNodes.sort((a, b) => {
+                        return a
+                            .querySelector('.displayMediaSection__mediaCard__desc__title')
+                            .textContent.localeCompare(b.querySelector('.displayMediaSection__mediaCard__desc__title').textContent);
+                    });
+                    $mediaCardsNodes.forEach((e, i) => {
+                        e.style.order = i;
+                    });
+                    app._photographerWork = this._work;
                 default:
                     break;
-                    // Change the main state in app for LigthBox modal correct order display
-                    app._photographerWork = this._work;
+                // Change the main state in app for LigthBox modal correct order display
             }
         });
-    };
-
-    clearMoviesWrapper = () => {
-        // Clear the displayMedia section
-        const displayMediaSection = document.querySelector('.displayMediaSection');
-        displayMediaSection.remove();
     };
 
     render() {

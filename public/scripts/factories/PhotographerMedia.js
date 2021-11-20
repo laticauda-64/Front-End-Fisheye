@@ -29,7 +29,7 @@ class PhotographerMedia {
                 </video>`;
 
         const article = document.createElement('article');
-        article.dataset.date = new Date(date).getTime();
+        article.dataset.date = date;
         article.classList.add('displayMediaSection__mediaCard');
         article.dataset.id = id;
 

@@ -31,8 +31,14 @@ class App {
         const data = await this._api.fetchData();
         const id = this.getIdFromUrl();
         this._photographerInfo = data.photographers.find((e) => e.id === id);
-        // By default, sort work by popularity (likes)
-        this._photographerWork = data.media.filter((e) => e.photographerId === id).sort((a, b) => b.likes - a.likes);
+        // By default, sort work by popularity (likes) & get a timestamp for dates
+        this._photographerWork = data.media
+            .filter((e) => e.photographerId === id)
+            .sort((a, b) => b.likes - a.likes)
+            .map((e) => {
+                e.date = new Date(e.date).getTime();
+                return e;
+            });
         this._totalLikes = this._photographerWork.reduce((a, b) => a + b.likes, 0);
     }
 
