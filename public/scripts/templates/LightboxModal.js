@@ -3,10 +3,11 @@
 /* * * * * * * * * * * * * * * * * * * */
 
 class LightboxModal {
-    constructor({ id, video, image }) {
+    constructor({ id, video, image, title }) {
         // Get current medias info
         this._image = image;
         this._video = video;
+        this._title = title;
         this._id = id;
 
         // Get the list of all photographers medias
@@ -16,6 +17,7 @@ class LightboxModal {
         // Initialize lightbox modal node container
         this.$container = document.createElement('div');
         this.$container.classList.add('lightBoxModal');
+        this.$container.setAttribute('aria-label', 'image closeup view');
     }
 
     buildMediaNode(mode) {
@@ -24,7 +26,7 @@ class LightboxModal {
             balise === 'img' ? this._photographerWork[this._currentIndex].image : this._photographerWork[this._currentIndex].video;
 
         if (mode === 'insert') {
-            return `<${balise} class="lightBoxModal__media" src="public/assets/media/${source}" ${
+            return `<${balise} class="lightBoxModal__media" src="public/assets/media/${source}" alt="${this._title}" ${
                 balise === 'video' ? 'controls="controls"' : ''
             }></${balise}>`;
         }

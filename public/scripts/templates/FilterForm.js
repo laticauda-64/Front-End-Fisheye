@@ -246,11 +246,11 @@ class FilterForm {
                         </select>
                         <!-- The beautiful custom select -->
                         <div class="filter__selectCustom" aria-hidden="true">
-                            <div class="filter__selectCustom__trigger">Popularité</div>
+                            <div class="filter__selectCustom__trigger" role="button" aria-haspopup="listbox" aria-expended>Popularité</div>
                             <div class="filter__selectCustom__options"> 
-                                <div class="filter__selectCustom__option" data-value="popular">Popularité</div>
-                                <div class="filter__selectCustom__option" data-value="date">Date</div>
-                                <div class="filter__selectCustom__option" data-value="title">Titre</div>
+                                <div class="filter__selectCustom__option" data-value="popular" role="listbox" aria-activedescendent>Popularité</div>
+                                <div class="filter__selectCustom__option" data-value="date" role="listbox" aria-activedescendent>Date</div>
+                                <div class="filter__selectCustom__option" data-value="title" role="listbox" aria-activedescendent>Titre</div>
                             </div>
                         </div>
                     </div>
