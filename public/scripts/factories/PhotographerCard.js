@@ -17,7 +17,7 @@ class PhotographerCard {
 
         const content = `
             <a class="photographersSection__profile__link" href="photographer.html?id=${id}">
-                <img src="${picture}" class="photographersSection__profile__link__picture" alt=""></img>
+                <img src="${picture}" class="photographersSection__profile__link__picture" alt="${name}"></img>
                 <h2 class="photographersSection_profile_link_name">${name}</h2>
             </a>
             <p class="photographersSection__profile__location">${city}, ${country}</p>
