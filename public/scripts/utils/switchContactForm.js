@@ -17,6 +17,7 @@ class SwitchContactModal {
             this._modalOpen = !this._modalOpen;
             if (this._modalOpen) {
                 this.$modalForm.style.display = 'flex';
+                document.getElementById('firstname').focus();
                 document.documentElement.addEventListener('keydown', this.triggerModal);
             } else {
                 this.$modalForm.style.display = 'none';
@@ -25,14 +26,15 @@ class SwitchContactModal {
         }
     };
 
-    submitForm(event) {
+    submitForm = (event) => {
         event.preventDefault();
         const formData = new FormData(document.querySelector('.contactModal__content__form'));
         // Affichage des champs du formulaire dans la console
         for (var pair of formData.entries()) {
             console.log(pair[0] + ': ' + pair[1]);
         }
-    }
+        this.triggerModal({ type: 'click' });
+    };
 
     addListeners() {
         this.$contactButton.addEventListener('click', this.triggerModal);
