@@ -86,7 +86,7 @@ Nous devons créer les pages suivantes pour le prototype :
 > inclure dans la page. De plus, l'utilisateur doit pouvoirutiliser les commandes du
 > clavier pour naviguer sur le site, comme les touches fléchées de la lightbox".
 
--   Utilisez des éléments HTML "sémantiques" qui décrivent leur intention autant que possible, au lieu de mettre des éléments <div> et <span> partout.
+-   Utilisez des éléments HTML "sémantiques" qui décrivent leur intention autant que possible, au lieu de mettre des éléments div et span partout.
 -   Lorsque vous devez créer un élément personnalisé, ajoutez des attributs ARIA pour décrire ce qu'il fait.
 -   Le code devrait passer les tests AChecker sans “known issue” (afin qu'il soit conforme aux WCAG).
 -   Toute la gestion des événements (par exemple, les clics et les pressions au clavier) doit être configurée (utilisez KeyboardEvent.key ou KeyboardEvent.code.).
