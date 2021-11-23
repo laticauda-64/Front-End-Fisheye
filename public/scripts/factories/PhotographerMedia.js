@@ -34,12 +34,12 @@ class PhotographerMedia {
         article.dataset.id = id;
 
         const content = `
-            <a href="#" class="displayMediaSection__mediaCard__link">
+            <a href="#" class="displayMediaSection__mediaCard__link" aria-label="${title}, closeup view">
                 ${thumbnail}
             </a>
             <div class="displayMediaSection__mediaCard__desc">
                 <p class="displayMediaSection__mediaCard__desc__title">${title}</p>
-                <p class="displayMediaSection__mediaCard__desc__likes" data-liked=false>${likes}</p>
+                <p class="displayMediaSection__mediaCard__desc__likes" aria-label="likes" data-liked=false>${likes}</p>
             </div>
         `;
 

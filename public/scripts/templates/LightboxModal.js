@@ -43,6 +43,7 @@ class LightboxModal {
     changeMedia(direction) {
         this._currentIndex = direction === 'next' ? this._currentIndex + 1 : this._currentIndex - 1;
         const currentMediaNode = document.querySelector('.lightBoxModal__media');
+        const currentMediaTitle = document.querySelector('.lightBoxModal__mediaDesc');
 
         if (this._currentIndex < 0) {
             this._currentIndex = this._photographerWork.length - 1;
@@ -50,7 +51,12 @@ class LightboxModal {
             this._currentIndex = 0;
         }
 
+        currentMediaTitle.remove();
         currentMediaNode.remove();
+        const imgTitle = document.createElement('h2');
+        imgTitle.classList.add('lightBoxModal__mediaDesc');
+        imgTitle.textContent = this._photographerWork[this._currentIndex].title;
+        document.querySelector('.lightBoxModal__mainContainer').appendChild(imgTitle);
         document.querySelector('.lightBoxModal__closeButton').before(this.buildMediaNode());
     }
 
@@ -83,7 +89,7 @@ class LightboxModal {
                         ${this.buildMediaNode('insert')}
                         <button class="lightBoxModal__closeButton" tabindex="0">Close dialog</button>
                     </div>
-                    <h2 class="lightBoxModal__mediaDesc">Lonesome</h2>
+                    <h2 class="lightBoxModal__mediaDesc">${this._title}</h2>
                 </div>
                 <button class="lightBoxModal__nextButton" tabindex="0">Image suivante</button>
         `;
