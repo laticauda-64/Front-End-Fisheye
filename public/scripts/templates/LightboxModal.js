@@ -83,15 +83,15 @@ class LightboxModal {
 
     render() {
         const html = `
-                <button class="lightBoxModal__prevButton" tabindex="0">Image précédente</button>
+                <button class="lightBoxModal__prevButton" aria-label="Précédent" tabindex="1">Image précédente</button>
                 <div class="lightBoxModal__mainContainer">
                     <div class="lightBoxModal__imgContainer">
                         ${this.buildMediaNode('insert')}
-                        <button class="lightBoxModal__closeButton" tabindex="0">Close dialog</button>
+                        <button class="lightBoxModal__closeButton" aria-label="Fermer" tabindex="0">Close dialog</button>
                     </div>
                     <h2 class="lightBoxModal__mediaDesc">${this._title}</h2>
                 </div>
-                <button class="lightBoxModal__nextButton" tabindex="0">Image suivante</button>
+                <button class="lightBoxModal__nextButton" aria-label="Suivant" tabindex="2">Image suivante</button>
         `;
         // Inject above code into the node
         this.$container.innerHTML = html;
