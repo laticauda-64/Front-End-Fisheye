@@ -456,6 +456,9 @@ h1 {
 .contactModal__content__header__closeIcon {
   cursor: pointer;
   align-self: start;
+  width: 60px;
+  height: 60px;
+  background: url(../assets/icons/close.svg) no-repeat center;
 }
 .contactModal__content__header__title {
   font-size: 64px;
