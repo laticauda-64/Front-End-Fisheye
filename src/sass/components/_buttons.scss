@@ -11,6 +11,16 @@
     cursor: pointer;
     margin: 0 auto;
 
+    @include media-query('tablets') {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        z-index: 3;
+        transform: translateX(-50%);
+        height: auto;
+        width: auto;
+    }
+
     &:hover,
     &:focus {
         color: #000;

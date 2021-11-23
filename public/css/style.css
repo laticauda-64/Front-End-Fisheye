@@ -37,6 +37,7 @@ ul {
 
 img {
   max-width: 100%;
+  max-height: 100%;
   display: block;
   object-fit: cover;
 }
@@ -68,6 +69,11 @@ body {
   width: 90%;
   margin: auto;
   max-width: 1440px;
+}
+@media screen and (max-width: 1065px) {
+  body {
+    width: 95%;
+  }
 }
 
 h1,
@@ -103,10 +109,34 @@ h1 {
   font-size: 36px;
   margin-right: 100px;
 }
+@media screen and (max-width: 1065px) {
+  h1 {
+    margin-right: 50px;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 12px;
+    margin: 0;
+  }
+}
 
 .logo {
   height: 50px;
   margin-left: 120px;
+}
+@media screen and (max-width: 1065px) {
+  .logo {
+    height: 50px;
+    margin-left: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .logo {
+    height: 40px;
+    margin: 0;
+  }
 }
 
 .photographersSection {
@@ -121,6 +151,16 @@ h1 {
   align-items: center;
   flex-direction: column;
   margin-bottom: 80px;
+}
+@media screen and (max-width: 1065px) {
+  .photographersSection__profile {
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .photographersSection__profile {
+    flex-basis: 100%;
+  }
 }
 .photographersSection__profile__link {
   text-align: center;

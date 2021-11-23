@@ -4,6 +4,10 @@
     padding: 10px 0;
     position: relative;
 
+    @include media-query('tablets') {
+        display: none;
+    }
+
     .isActive &__selectCustom__options {
         display: block;
     }

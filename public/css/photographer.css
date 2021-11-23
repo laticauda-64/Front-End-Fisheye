@@ -38,6 +38,7 @@ ul {
 
 img {
   max-width: 100%;
+  max-height: 100%;
   display: block;
   object-fit: cover;
 }
@@ -69,6 +70,11 @@ body {
   width: 90%;
   margin: auto;
   max-width: 1440px;
+}
+@media screen and (max-width: 1065px) {
+  body {
+    width: 95%;
+  }
 }
 
 h1,
@@ -104,14 +110,43 @@ h1 {
   font-size: 36px;
   margin-right: 100px;
 }
+@media screen and (max-width: 1065px) {
+  h1 {
+    margin-right: 50px;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 12px;
+    margin: 0;
+  }
+}
 
 .logo {
   height: 50px;
   margin-left: 120px;
 }
+@media screen and (max-width: 1065px) {
+  .logo {
+    height: 50px;
+    margin-left: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .logo {
+    height: 40px;
+    margin: 0;
+  }
+}
 
 .logo {
   margin-left: 0;
+}
+@media screen and (max-width: 1065px) {
+  .logo {
+    height: 40px;
+  }
 }
 
 .photographer__profileCard {
@@ -122,18 +157,42 @@ h1 {
   align-items: center;
   padding: 0 50px;
 }
+@media screen and (max-width: 1065px) {
+  .photographer__profileCard {
+    padding: 0;
+    background: none;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
 .photographer__profileCard__infos__name {
   color: var(--primary-light-red);
   font-size: 64px;
+}
+@media screen and (max-width: 1065px) {
+  .photographer__profileCard__infos__name {
+    font-size: 38px;
+  }
 }
 .photographer__profileCard__infos__location {
   font-size: 24px;
   color: var(--primary-dark-red);
 }
+@media screen and (max-width: 1065px) {
+  .photographer__profileCard__infos__location {
+    font-size: 16px;
+  }
+}
 .photographer__profileCard__infos__description {
   font-size: 18px;
   color: var(--secondary-dark-gray);
   margin-top: 19px;
+}
+@media screen and (max-width: 1065px) {
+  .photographer__profileCard__infos__description {
+    margin-top: 0;
+    font-size: 14px;
+  }
 }
 .photographer__profileCard__contactButton {
   font-size: 18px;
@@ -148,6 +207,17 @@ h1 {
   cursor: pointer;
   margin: 0 auto;
 }
+@media screen and (max-width: 1065px) {
+  .photographer__profileCard__contactButton {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+    height: auto;
+    width: auto;
+  }
+}
 .photographer__profileCard__contactButton:hover, .photographer__profileCard__contactButton:focus {
   color: #000;
   background: var(--secondary-light-red);
@@ -157,6 +227,13 @@ h1 {
   height: 200px;
   border-radius: 50%;
   margin-left: auto;
+}
+@media screen and (max-width: 1065px) {
+  .photographer__profileCard__picture {
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+  }
 }
 .photographer__stickyMiniBar {
   display: flex;
@@ -172,6 +249,11 @@ h1 {
   bottom: 0;
   z-index: 8;
 }
+@media screen and (max-width: 1065px) {
+  .photographer__stickyMiniBar {
+    display: none;
+  }
+}
 .photographer__stickyMiniBar svg {
   margin-left: 6px;
 }
@@ -184,6 +266,11 @@ h1 {
   align-items: center;
   padding: 10px 0;
   position: relative;
+}
+@media screen and (max-width: 1065px) {
+  .filter {
+    display: none;
+  }
 }
 .isActive .filter__selectCustom__options {
   display: block;
@@ -325,9 +412,24 @@ h1 {
   flex-wrap: wrap;
   padding-top: 20px;
 }
+@media screen and (max-width: 600px) {
+  .displayMediaSection {
+    justify-content: center;
+  }
+}
 .displayMediaSection__mediaCard {
   flex-basis: 30%;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 1065px) {
+  .displayMediaSection__mediaCard {
+    flex-basis: 48%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .displayMediaSection__mediaCard {
+    flex-basis: 95%;
+  }
 }
 .displayMediaSection__mediaCard__picture {
   width: 100%;
@@ -351,6 +453,11 @@ h1 {
   display: flex;
   align-items: center;
   padding-top: 10px;
+}
+@media screen and (max-width: 1065px) {
+  .displayMediaSection__mediaCard__desc {
+    font-size: 16px;
+  }
 }
 .displayMediaSection__mediaCard__desc__likes {
   font-weight: 500;
@@ -393,6 +500,18 @@ h1 {
   margin-top: 7px;
   z-index: 11;
 }
+@media screen and (max-width: 1065px) {
+  .lightBoxModal__nextButton, .lightBoxModal__prevButton {
+    width: 65px;
+    background-size: 15px 24px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .lightBoxModal__nextButton, .lightBoxModal__prevButton {
+    width: 35px;
+    background-size: 10px 18px;
+  }
+}
 .lightBoxModal__prevButton {
   right: auto;
   left: 0;
@@ -422,10 +541,32 @@ h1 {
   top: 0;
   right: -70px;
 }
+@media screen and (max-width: 1065px) {
+  .lightBoxModal__closeButton {
+    width: 21px;
+    height: 21px;
+    background-size: 21px 21px;
+    right: -35px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .lightBoxModal__closeButton {
+    width: 15px;
+    height: 15px;
+    background-size: 15px 15px;
+    right: -25px;
+  }
+}
 .lightBoxModal__mediaDesc {
   color: var(--primary-dark-red);
   font-size: 24px;
   margin-top: 14px;
+}
+@media screen and (max-width: 600px) {
+  .lightBoxModal__mediaDesc {
+    font-size: 18px;
+    margin-top: 10px;
+  }
 }
 
 .contactModal {
@@ -505,6 +646,17 @@ h1 {
   cursor: pointer;
   margin: 0 auto;
   margin: 0;
+}
+@media screen and (max-width: 1065px) {
+  .contactModal__content__form__submit {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    z-index: 3;
+    transform: translateX(-50%);
+    height: auto;
+    width: auto;
+  }
 }
 .contactModal__content__form__submit:hover, .contactModal__content__form__submit:focus {
   color: #000;

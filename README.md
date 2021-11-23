@@ -30,8 +30,8 @@ Servir le fichier index.html avec un serveur web (Live Server ?).
 -   [x] Faire la "mini info bar" en sticky right bottom sur la page photogapher
 -   [x] Construire le système de like sur les mediaCards
 -   [x] Corriger BUG compteur de likes HS quand filtre
--   [ ] Faire le responsive tablette + mobile
--   [ ] Mettre en place l'accessibilité clavier
+-   [x] Mettre en place l'accessibilité clavier
+-   [ ] Faire le responsive tablette + mobile (finir contact form mobile)
 
 ## Consignes détaillées
 

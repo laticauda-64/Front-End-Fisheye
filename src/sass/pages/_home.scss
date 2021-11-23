@@ -13,6 +13,14 @@
         flex-direction: column;
         margin-bottom: 80px;
 
+        @include media-query('tablets') {
+            flex-basis: 50%;
+        }
+
+        @include media-query('mobile') {
+            flex-basis: 100%;
+        }
+
         &__link {
             text-align: center;
 
