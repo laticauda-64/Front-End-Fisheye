@@ -18,7 +18,7 @@ class LightboxModal {
         // Initialize lightbox modal node container
         this.$container = document.createElement('div');
         this.$container.classList.add('lightBoxModal');
-        this.$container.setAttribute('aria-label', 'image closeup view');
+        this.$container.setAttribute('aria-label', `${this._title}, closeup view`);
     }
 
     buildMediaNode(mode) {
@@ -108,5 +108,8 @@ class LightboxModal {
 
         // Inject LightBox in DOM
         document.querySelector('body').appendChild(this.$container);
+
+        // Focus on close Button first for tab navigation
+        document.querySelector('.lightBoxModal__closeButton').focus();
     }
 }
