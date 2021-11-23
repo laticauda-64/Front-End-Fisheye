@@ -3,11 +3,12 @@
 /* * * * * * * * * * * * * * * * * * * */
 
 class LightboxModal {
-    constructor({ id, video, image, title }) {
+    constructor({ id, video, image, title, desc }) {
         // Get current medias info
         this._image = image;
         this._video = video;
         this._title = title;
+        this._desc = desc;
         this._id = id;
 
         // Get the list of all photographers medias
@@ -24,9 +25,10 @@ class LightboxModal {
         const balise = this._photographerWork[this._currentIndex].image ? 'img' : 'video';
         const source =
             balise === 'img' ? this._photographerWork[this._currentIndex].image : this._photographerWork[this._currentIndex].video;
+        const desc = this._photographerWork[this._currentIndex].desc;
 
         if (mode === 'insert') {
-            return `<${balise} class="lightBoxModal__media" src="public/assets/media/${source}" alt="${this._title}" ${
+            return `<${balise} class="lightBoxModal__media" src="public/assets/media/${source}" alt="${desc}" ${
                 balise === 'video' ? 'controls="controls"' : ''
             }></${balise}>`;
         }
@@ -34,6 +36,7 @@ class LightboxModal {
         newNode.classList.add('lightBoxModal__media');
         newNode.src = `public/assets/media/${source}`;
         newNode.controls = true;
+        newNode.alt = desc;
         return newNode;
     }
 
