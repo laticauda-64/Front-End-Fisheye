@@ -10,6 +10,12 @@
         height: 100%;
         background-color: hsla(0, 0, 0, 0.25);
 
+        @include media-query('mobile') {
+            height: 100%;
+            z-index: 9;
+            overflow-y: scroll;
+        }
+
         &__content {
             border-radius: 5px;
             background-color: var(--secondary-light-red);
@@ -20,9 +26,18 @@
             justify-content: space-between;
             padding: 35px;
 
+            @include media-query('mobile') {
+                width: 100%;
+                padding: 15px;
+            }
+
             &__header {
                 justify-content: space-between;
                 width: 100%;
+
+                // @include media-query('mobile') {
+                //     height: auto;
+                // }
 
                 &__closeIcon {
                     cursor: pointer;
@@ -30,10 +45,18 @@
                     width: 60px;
                     height: 60px;
                     background: url(../assets/icons/close.svg) no-repeat center;
+
+                    @include media-query('mobile') {
+                        align-self: flex-end;
+                    }
                 }
 
                 &__title {
                     font-size: 64px;
+
+                    @include media-query('mobile') {
+                        font-size: 36px;
+                    }
                 }
             }
 
@@ -44,17 +67,29 @@
                 align-items: flex-start;
                 margin-top: 40px;
 
+                @include media-query('mobile') {
+                    margin-top: 15px;
+                }
+
                 &__field {
                     display: flex;
                     flex-direction: column;
                     width: 100%;
                     align-items: self-start;
                     margin-bottom: 26px;
+
+                    @include media-query('mobile') {
+                        margin-bottom: 10px;
+                    }
                 }
 
                 &__label {
                     color: #312e2e;
                     font-size: 36px;
+
+                    @include media-query('mobile') {
+                        font-size: 30px;
+                    }
                 }
 
                 &__input,
@@ -65,6 +100,10 @@
                     border: none;
                     border-radius: 5px;
                     font-size: 24px;
+
+                    @include media-query('mobile') {
+                        font-size: 18px;
+                    }
                 }
 
                 &__textaera {
@@ -74,6 +113,10 @@
                 &__submit {
                     @include button;
                     margin: 0;
+
+                    @include media-query('mobile') {
+                        margin: auto;
+                    }
                 }
             }
         }

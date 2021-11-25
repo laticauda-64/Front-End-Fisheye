@@ -207,6 +207,10 @@ h1 {
   cursor: pointer;
   margin: 0 auto;
 }
+.photographer__profileCard__contactButton:hover, .photographer__profileCard__contactButton:focus {
+  color: #000;
+  background: var(--secondary-light-red);
+}
 @media screen and (max-width: 1065px) {
   .photographer__profileCard__contactButton {
     position: fixed;
@@ -217,10 +221,6 @@ h1 {
     height: auto;
     width: auto;
   }
-}
-.photographer__profileCard__contactButton:hover, .photographer__profileCard__contactButton:focus {
-  color: #000;
-  background: var(--secondary-light-red);
 }
 .photographer__profileCard__picture {
   width: 200px;
@@ -580,6 +580,13 @@ h1 {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.25);
 }
+@media screen and (max-width: 600px) {
+  .contactModal {
+    height: 100%;
+    z-index: 9;
+    overflow-y: scroll;
+  }
+}
 .contactModal__content {
   border-radius: 5px;
   background-color: var(--secondary-light-red);
@@ -589,6 +596,12 @@ h1 {
   align-items: center;
   justify-content: space-between;
   padding: 35px;
+}
+@media screen and (max-width: 600px) {
+  .contactModal__content {
+    width: 100%;
+    padding: 15px;
+  }
 }
 .contactModal__content__header {
   justify-content: space-between;
@@ -601,8 +614,18 @@ h1 {
   height: 60px;
   background: url(../assets/icons/close.svg) no-repeat center;
 }
+@media screen and (max-width: 600px) {
+  .contactModal__content__header__closeIcon {
+    align-self: flex-end;
+  }
+}
 .contactModal__content__header__title {
   font-size: 64px;
+}
+@media screen and (max-width: 600px) {
+  .contactModal__content__header__title {
+    font-size: 36px;
+  }
 }
 .contactModal__content__form {
   display: flex;
@@ -611,6 +634,11 @@ h1 {
   align-items: flex-start;
   margin-top: 40px;
 }
+@media screen and (max-width: 600px) {
+  .contactModal__content__form {
+    margin-top: 15px;
+  }
+}
 .contactModal__content__form__field {
   display: flex;
   flex-direction: column;
@@ -618,9 +646,19 @@ h1 {
   align-items: self-start;
   margin-bottom: 26px;
 }
+@media screen and (max-width: 600px) {
+  .contactModal__content__form__field {
+    margin-bottom: 10px;
+  }
+}
 .contactModal__content__form__label {
   color: #312e2e;
   font-size: 36px;
+}
+@media screen and (max-width: 600px) {
+  .contactModal__content__form__label {
+    font-size: 30px;
+  }
 }
 .contactModal__content__form__input, .contactModal__content__form__textaera {
   width: 100%;
@@ -629,6 +667,11 @@ h1 {
   border: none;
   border-radius: 5px;
   font-size: 24px;
+}
+@media screen and (max-width: 600px) {
+  .contactModal__content__form__input, .contactModal__content__form__textaera {
+    font-size: 18px;
+  }
 }
 .contactModal__content__form__textaera {
   height: 170px;
@@ -647,20 +690,14 @@ h1 {
   margin: 0 auto;
   margin: 0;
 }
-@media screen and (max-width: 1065px) {
-  .contactModal__content__form__submit {
-    position: fixed;
-    bottom: 10px;
-    left: 50%;
-    z-index: 3;
-    transform: translateX(-50%);
-    height: auto;
-    width: auto;
-  }
-}
 .contactModal__content__form__submit:hover, .contactModal__content__form__submit:focus {
   color: #000;
   background: var(--secondary-light-red);
+}
+@media screen and (max-width: 600px) {
+  .contactModal__content__form__submit {
+    margin: auto;
+  }
 }
 
 /*# sourceMappingURL=photographer.css.map */
