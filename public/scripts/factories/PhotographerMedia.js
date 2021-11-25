@@ -2,15 +2,18 @@
 /*  Media Card on photographer Page  */
 /* * * * * * * * * * * * * * * * * * */
 
-class PhotographerMedia {
-    constructor(data) {
+import LightboxModal from '../templates/LightboxModal.js';
+
+export default class PhotographerMedia {
+    constructor(data, context) {
+        this._context = context;
         this._data = data;
     }
 
-    onClick(node, mediaSource) {
+    onClick(node, mediaSource, context) {
         node.addEventListener('click', function (e) {
             e.preventDefault();
-            const lightBox = new LightboxModal(mediaSource);
+            const lightBox = new LightboxModal(mediaSource, context);
             lightBox.render();
         });
     }
@@ -45,7 +48,7 @@ class PhotographerMedia {
 
         article.innerHTML = content;
 
-        this.onClick(article.querySelector('.displayMediaSection__mediaCard__link'), this._data);
+        this.onClick(article.querySelector('.displayMediaSection__mediaCard__link'), this._data, this._context);
 
         return article;
     }

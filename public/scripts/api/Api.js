@@ -1,4 +1,4 @@
-class Api {
+export default class Api {
     async fetchData() {
         return fetch('data/photographers.json')
             .then((res) => res.json())

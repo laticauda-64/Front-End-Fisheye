@@ -2,7 +2,7 @@
 /*  Filter field on Photograph page  */
 /* * * * * * * * * * * * * * * * * * */
 
-class FilterForm {
+export default class FilterForm {
     constructor(work) {
         this._work = work;
         this.$wrapper = document.createElement('section');
@@ -197,7 +197,6 @@ class FilterForm {
                     $mediaCardsNodes.forEach((e, i) => {
                         e.style.order = i;
                     });
-                    app._photographerWork = this._work;
                     break;
                 case 'date':
                     this._work.sort((a, b) => b.date - a.date);
@@ -212,7 +211,6 @@ class FilterForm {
                         e.style.order = i;
                     });
 
-                    app._photographerWork = this._work;
                     break;
                 case 'title':
                     this._work.sort((a, b) => a.title.localeCompare(b.title));
@@ -224,7 +222,6 @@ class FilterForm {
                     $mediaCardsNodes.forEach((e, i) => {
                         e.style.order = i;
                     });
-                    app._photographerWork = this._work;
                 default:
                     break;
                 // Change the main state in app for LigthBox modal correct order display

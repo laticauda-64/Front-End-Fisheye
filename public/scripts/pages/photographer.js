@@ -1,11 +1,14 @@
-/* * * * * * * * * * * * * * * * * * * */
-/*  LightBox modal on Photograph page  */
-/* * * * * * * * * * * * * * * * * * * */
+import Api from '../api/Api.js';
+import PhotographerTopCardProfile from '../templates/PhotographerTopCardProfile.js';
+import FilterForm from '../templates/FilterForm.js';
+import DisplayMediaSection from '../templates/DisplayMediaSection.js';
+import SwitchContactModal from '../utils/switchContactForm.js';
+import Likes from '../utils/Likes.js';
+
 class App {
     constructor() {
         // Query string parameters to display the correct subject
-        this._urlQueryParams = new URLSearchParams(window.location.search);
-        this._photographerId = Object.fromEntries(this._urlQueryParams.entries()).id;
+        this._photographerId = Object.fromEntries(new URLSearchParams(window.location.search).entries()).id;
 
         // Nodes
         this.$main = document.getElementById('main');
@@ -63,15 +66,8 @@ class App {
         // Likes system
         const handleLikes = new Likes(this._totalLikes);
         handleLikes.init();
-
-        // Exemple de flow
-        // const Form = new FormModal(this.UserContext)
-        // Form.render()
-
-        // const Filter = new FilterForm(this.FullMovies)
-        // Filter.render()
     }
 }
 
-const app = new App();
+var app = new App();
 app.main();

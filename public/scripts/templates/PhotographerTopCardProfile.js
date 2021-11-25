@@ -2,7 +2,7 @@
 /*  Big Card Profile on Photographer Page  */
 /* * * * * * * * * * * * * * * * * * * * * */
 
-class PhotographerTopCardProfile {
+export default class PhotographerTopCardProfile {
     constructor(infos, likes) {
         this._infos = infos;
         this._totalLikes = likes;

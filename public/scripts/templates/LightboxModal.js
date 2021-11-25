@@ -2,17 +2,17 @@
 /*  LightBox modal on Photograph page  */
 /* * * * * * * * * * * * * * * * * * * */
 
-class LightboxModal {
-    constructor({ id, video, image, title, desc }) {
+export default class LightboxModal {
+    constructor(data, context) {
         // Get current medias info
-        this._image = image;
-        this._video = video;
-        this._title = title;
-        this._desc = desc;
-        this._id = id;
+        this._image = data.image;
+        this._video = data.video;
+        this._title = data.title;
+        this._desc = data.desc;
+        this._id = data.id;
 
         // Get the list of all photographers medias
-        this._photographerWork = app._photographerWork;
+        this._photographerWork = context;
         // Find current index in photographers medias list, for navigation
         this._currentIndex = this._photographerWork.findIndex((e) => e.id === this._id);
         // Initialize lightbox modal node container

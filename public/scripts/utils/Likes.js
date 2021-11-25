@@ -2,7 +2,7 @@
 /*  Handle likes on Photograph page  */
 /* * * * * * * * * * * * * * * * * * */
 
-class Likes {
+export default class Likes {
     constructor(likes) {
         this._totalLikes = likes;
         this.$totalLikes = document.querySelector('.photographer__stickyMiniBar__likes');
@@ -27,7 +27,5 @@ class Likes {
 
     render() {
         this.$totalLikes.textContent = this._totalLikes;
-        // Update count in the main app state
-        app._totalLikes = this._totalLikes;
     }
 }

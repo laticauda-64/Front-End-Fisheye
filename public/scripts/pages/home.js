@@ -1,6 +1,8 @@
 /* * * * * * * * * * * * * * * * * * * */
 /*  Main JS entry point for Home page  */
 /* * * * * * * * * * * * * * * * * * * */
+import Api from '../api/Api.js';
+import PhotographerCard from '../factories/PhotographerCard.js';
 class App {
     constructor() {
         // Nodes

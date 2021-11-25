@@ -1,10 +1,11 @@
 /* * * * * * * * * * * * * * * * * * * * * * */
 /*  DisplayMedia Section on Photograph page  */
 /* * * * * * * * * * * * * * * * * * * * * * */
-
-class DisplayMediaSection {
+import PhotographerMedia from '../factories/PhotographerMedia.js';
+export default class DisplayMediaSection {
     constructor(data) {
         this._photographerWork = data;
+        this.$main = document.getElementById('main');
     }
 
     render() {
@@ -12,10 +13,10 @@ class DisplayMediaSection {
         displayWorkSection.classList.add('displayMediaSection');
 
         this._photographerWork.forEach((e) => {
-            const workTemplate = new PhotographerMedia(e);
+            const workTemplate = new PhotographerMedia(e, this._photographerWork);
             displayWorkSection.appendChild(workTemplate.render());
         });
 
-        app.$main.appendChild(displayWorkSection);
+        this.$main.appendChild(displayWorkSection);
     }
 }

@@ -3,7 +3,7 @@
 /*  contact form on Photograph page    */
 /* * * * * * * * * * * * * * * * * * * */
 
-class SwitchContactModal {
+export default class SwitchContactModal {
     constructor() {
         this._modalOpen = false;
         this.$modalForm = document.querySelector('.contactModal');

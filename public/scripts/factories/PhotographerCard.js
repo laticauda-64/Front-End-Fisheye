@@ -2,7 +2,7 @@
 /*  Miniature Card on Home Page  */
 /* * * * * * * * * * * * * * * * */
 
-class PhotographerCard {
+export default class PhotographerCard {
     constructor(data) {
         this._data = data;
     }
