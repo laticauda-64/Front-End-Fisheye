@@ -233,10 +233,10 @@ export default class FilterForm {
         this.$wrapper.classList.add('filter');
 
         const filterForm = `
-                    <span class="filter__label" id="sortBy">Trier par</span>
+                    <label for="filterBy" class="filter__label" id="sortBy">Trier par</label>
                     <div class="filter__wrapper">
                         <!-- The native select for assistive tech -->
-                        <select class="filter__selectNative" aria-labelledby="sortBy">
+                        <select class="filter__selectNative" aria-labelledby="sortBy" id="filterBy">
                             <option value="popular">Popularité</option>
                             <option value="date">Date</option>
                             <option value="title">Titre</option>

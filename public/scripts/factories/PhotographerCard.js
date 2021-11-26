@@ -17,7 +17,7 @@ export default class PhotographerCard {
 
         const content = `
             <a class="photographersSection__profile__link" href="photographer.html?id=${id}">
-                <img src="${picture}" class="photographersSection__profile__link__picture" alt=" "></img>
+                <img src="${picture}" class="photographersSection__profile__link__picture" alt="${tagline}"></img>
                 <h2 class="photographersSection__profile__link__name">${name}</h2>
             </a>
             <p class="photographersSection__profile__location">${city}, ${country}</p>
