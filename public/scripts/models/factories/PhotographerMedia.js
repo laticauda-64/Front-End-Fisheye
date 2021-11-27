@@ -2,7 +2,7 @@
 /*  Media Card on photographer Page  */
 /* * * * * * * * * * * * * * * * * * */
 
-import LightboxModal from '../templates/LightboxModal.js';
+import LightboxModal from '../../templates/LightboxModal.js';
 
 export default class PhotographerMedia {
     constructor(data, context) {

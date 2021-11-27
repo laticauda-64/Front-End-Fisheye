@@ -1,5 +1,5 @@
-import Api from '../api/Api.js';
-import PhotographerTopCardProfile from '../templates/PhotographerTopCardProfile.js';
+import Api from '../models/Api.js';
+import PhotographerTopCardProfile from '../templates/PhotographerProfileLarge.js';
 import FilterForm from '../templates/FilterForm.js';
 import DisplayMediaSection from '../templates/DisplayMediaSection.js';
 import SwitchContactModal from '../utils/switchContactForm.js';

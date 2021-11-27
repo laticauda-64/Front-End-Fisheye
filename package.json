@@ -4,7 +4,8 @@
     "description": "Projet n°6 du parcours front-end OpenClassRooms",
     "main": "index.html",
     "scripts": {
-        "sass": "sass --watch ./src/sass/:./public/css"
+        "sass": "sass --watch ./src/sass/:./public/css",
+        "lint": "./node_modules/.bin/eslint public/scripts/controller/home.js"
     },
     "repository": {
         "type": "git",
@@ -22,7 +23,7 @@
     },
     "homepage": "https://github.com/laticauda-64/Front-End-Fisheye#readme",
     "devDependencies": {
-        "eslint": "^8.2.0",
+        "eslint": "^8.3.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-html": "^6.2.0",
         "prettier": "^2.4.1",
