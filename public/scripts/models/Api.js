@@ -61,9 +61,9 @@ class GetPhotographers extends Api {
      * @param {number} id
      * @returns {Photographer}
      */
-    async getPhotographerById(id) {
+    async getPhotographerById() {
         const data = await this.getList();
-        return data.find((e) => e.id === id);
+        return data.find((e) => e.id === this.id);
     }
 }
 
@@ -78,10 +78,10 @@ class GetMedias extends Api {
      * @param {number} id
      * @returns {Media[]} Array of Photographers
      */
-    async getMedias(id) {
+    async getMedias() {
         const data = await this.fetchData();
-        return data.media.filter((e) => e.photographerId === id);
+        return data.media.filter((e) => e.photographerId === this.id);
     }
 }
 
-export { GetPhotographers, GetMedias };
+export { Api, GetPhotographers, GetMedias };

@@ -1,6 +1,6 @@
 import PhotographerProfileSmall from '../../templates/PhotographerProfileSmall.js';
 
-export default class DisplayPhotographersMiniatures {
+export default class BuildIndexPage {
     constructor(photographersList, domNode) {
         this.photographersList = photographersList;
         this.dom = domNode;

@@ -2,7 +2,7 @@
 /*  Main JS entry point for Home page  */
 /* * * * * * * * * * * * * * * * * * * */
 import { GetPhotographers } from '../models/Api.js';
-import DisplayPhotographersMiniatures from '../models/builders/DisplayPhotographersMiniatures.js';
+import BuildIndexPage from '../models/builders/BuildIndexPage.js';
 
 class App {
     constructor() {
@@ -16,15 +16,13 @@ class App {
         this._photographersList = [];
     }
 
-    /**
-     * Initialiaze the JS on index.html page
-     * @async
-     * @returns {void}
-     */
-    async main() {
-        this._photographersList = await this._api.getList();
+    // Initialiaze the JS on index.html page
 
-        new DisplayPhotographersMiniatures(this._photographersList, this.dom.$photographersSection).init();
+    async main() {
+        // Fetch data
+        this._photographersList = await this._api.getList();
+        // Build page
+        new BuildIndexPage(this._photographersList, this.dom.$photographersSection).init();
     }
 }
 

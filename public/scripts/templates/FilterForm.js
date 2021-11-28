@@ -9,7 +9,7 @@ export default class FilterForm {
         this.$main = document.getElementById('main');
     }
 
-    customizedDropDownMenu = () => {
+    customizedDropDownMenu() {
         this.$selectNative = document.querySelector('.filter__selectNative');
         this.$selectCustom = document.querySelector('.filter__selectCustom');
         this.$selectCustomTrigger = document.querySelector('.filter__selectCustom__trigger');
@@ -141,7 +141,7 @@ export default class FilterForm {
         });
 
         // Toggle custom select visibility when clicking the box
-        this.$selectCustomTrigger.addEventListener('click', (e) => {
+        this.$selectCustomTrigger.addEventListener('click', () => {
             const isClosed = !this.$selectCustom.classList.contains('isActive');
 
             if (isClosed) {
@@ -151,7 +151,6 @@ export default class FilterForm {
             }
         });
 
-        // Imperative code
         // Update selectCustom value when an option is clicked or hovered
         this.customOptsList.forEach((elOption, index) => {
             elOption.addEventListener('click', (e) => {
@@ -164,15 +163,15 @@ export default class FilterForm {
                 closeSelectCustom();
             });
 
-            elOption.addEventListener('mouseenter', (e) => {
+            elOption.addEventListener('mouseenter', () => {
                 updateCustomSelectHovered(index);
             });
 
             // TODO: Toggle these event listeners based on selectCustom visibility
         });
-    };
+    }
 
-    onChangeFilterData = () => {
+    onChangeFilterData() {
         // Reorder displayMedia section when select filter change
 
         this.$selectNative.addEventListener('change', (e) => {
@@ -222,12 +221,11 @@ export default class FilterForm {
                     $mediaCardsNodes.forEach((e, i) => {
                         e.style.order = i;
                     });
-                default:
-                    break;
+
                 // Change the main state in app for LigthBox modal correct order display
             }
         });
-    };
+    }
 
     render() {
         this.$wrapper.classList.add('filter');
