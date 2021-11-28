@@ -15,6 +15,10 @@ export default class LightboxModal {
         this.$container.classList.add('lightBoxModal');
         this.$container.setAttribute('aria-label', `${this.currentMedia.title}, closeup view`);
 
+        // Bind this context for eventListenners
+        this.manageKeyPress = this.manageKeyPress.bind(this);
+        this.deleteModal = this.deleteModal.bind(this);
+
         console.log(this.currentMedia);
     }
 
@@ -57,7 +61,7 @@ export default class LightboxModal {
         document.querySelector('.lightBoxModal__closeButton').before(this.buildMediaNode());
     }
 
-    manageKeyPress = (e) => {
+    manageKeyPress(e) {
         switch (e.keyCode) {
             case 27:
                 this.deleteModal();
@@ -71,12 +75,13 @@ export default class LightboxModal {
             default:
                 break;
         }
-    };
+    }
 
-    deleteModal = () => {
+    deleteModal() {
+        console.log(this);
         this.$container.remove();
         document.documentElement.removeEventListener('keydown', this.manageKeyPress);
-    };
+    }
 
     render() {
         const html = `
