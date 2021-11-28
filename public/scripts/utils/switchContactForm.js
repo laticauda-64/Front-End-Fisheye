@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * */
-/*  Simple class to display            */
+/*  Build                              */
 /*  contact form on Photograph page    */
 /* * * * * * * * * * * * * * * * * * * */
 
@@ -10,9 +10,14 @@ export default class SwitchContactModal {
         this.$contactButton = document.querySelector('.photographer__profileCard__contactButton');
         this.$closeButton = document.querySelector('.contactModal__content__header__closeIcon');
         this.$submitButton = document.querySelector('.contactModal__content__form__submit');
+
+        // Bind this context to following methods
+        this.triggerModal = this.triggerModal.bind(this);
+        this.submitForm = this.submitForm.bind(this);
+        this.addListeners = this.addListeners.bind(this);
     }
 
-    triggerModal = (event) => {
+    triggerModal(event) {
         if (event.type === 'click' || event.keyCode === 27) {
             this._modalOpen = !this._modalOpen;
             if (this._modalOpen) {
@@ -24,9 +29,9 @@ export default class SwitchContactModal {
                 document.documentElement.removeEventListener('keydown', this.triggerModal);
             }
         }
-    };
+    }
 
-    submitForm = (event) => {
+    submitForm(event) {
         event.preventDefault();
         const formData = new FormData(document.querySelector('.contactModal__content__form'));
         // Affichage des champs du formulaire dans la console
@@ -34,7 +39,7 @@ export default class SwitchContactModal {
             console.log(pair[0] + ': ' + pair[1]);
         }
         this.triggerModal({ type: 'click' });
-    };
+    }
 
     addListeners() {
         this.$contactButton.addEventListener('click', this.triggerModal);

@@ -7,6 +7,11 @@ export default class FilterForm {
         this._work = work;
         this.$wrapper = document.createElement('section');
         this.$main = document.getElementById('main');
+
+        // Bind this context to following methods
+        this.customizedDropDownMenu = this.customizedDropDownMenu.bind(this);
+        this.onChangeFilterData = this.onChangeFilterData.bind(this);
+        this.render = this.render.bind(this);
     }
 
     customizedDropDownMenu() {

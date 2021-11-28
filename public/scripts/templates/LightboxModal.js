@@ -3,22 +3,19 @@
 /* * * * * * * * * * * * * * * * * * * */
 
 export default class LightboxModal {
-    constructor(data, context) {
-        // Get current medias info
-        this._image = data.image;
-        this._video = data.video;
-        this._title = data.title;
-        this._desc = data.desc;
-        this._id = data.id;
+    constructor(mediaId, data) {
+        this.currentMedia = data.find((e) => e.id == mediaId);
 
         // Get the list of all photographers medias
-        this._photographerWork = context;
+        this._photographerWork = data;
         // Find current index in photographers medias list, for navigation
-        this._currentIndex = this._photographerWork.findIndex((e) => e.id === this._id);
+        this._currentIndex = this._photographerWork.findIndex((e) => e.id === this.currentMedia.id);
         // Initialize lightbox modal node container
         this.$container = document.createElement('div');
         this.$container.classList.add('lightBoxModal');
-        this.$container.setAttribute('aria-label', `${this._title}, closeup view`);
+        this.$container.setAttribute('aria-label', `${this.currentMedia.title}, closeup view`);
+
+        console.log(this.currentMedia);
     }
 
     buildMediaNode(mode) {
@@ -89,7 +86,7 @@ export default class LightboxModal {
                         ${this.buildMediaNode('insert')}
                         <button class="lightBoxModal__closeButton" aria-label="Fermer" tabindex="0">Close dialog</button>
                     </div>
-                    <h2 class="lightBoxModal__mediaDesc">${this._title}</h2>
+                    <h2 class="lightBoxModal__mediaDesc">${this.currentMedia.title}</h2>
                 </div>
                 <button class="lightBoxModal__nextButton" aria-label="Suivant" tabindex="2">Image suivante</button>
         `;

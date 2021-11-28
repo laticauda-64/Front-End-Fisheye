@@ -1,7 +1,8 @@
 /* * * * * * * * * * * * * * * * * * * * * * */
 /*  DisplayMedia Section on Photograph page  */
 /* * * * * * * * * * * * * * * * * * * * * * */
-import PhotographerMedia from '../models/factories/PhotographerMedia.js';
+
+import mediaFactory from '../models/factories/mediaFactory.js';
 export default class DisplayMediaSection {
     constructor(data) {
         this._photographerWork = data;
@@ -14,8 +15,7 @@ export default class DisplayMediaSection {
         displayWorkSection.classList.add('displayMediaSection');
 
         this._photographerWork.forEach((e) => {
-            const workTemplate = new PhotographerMedia(e, this._photographerWork);
-            displayWorkSection.appendChild(workTemplate.render());
+            displayWorkSection.appendChild(mediaFactory(e));
         });
 
         this.$main.appendChild(displayWorkSection);
