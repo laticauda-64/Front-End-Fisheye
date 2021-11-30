@@ -35,9 +35,10 @@
                 justify-content: space-between;
                 width: 100%;
 
-                // @include media-query('mobile') {
-                //     height: auto;
-                // }
+                @include media-query('mobile-xs') {
+                    height: 290px;
+                    align-items: flex-end;
+                }
 
                 &__closeIcon {
                     cursor: pointer;

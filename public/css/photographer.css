@@ -607,6 +607,12 @@ h1 {
   justify-content: space-between;
   width: 100%;
 }
+@media screen and (max-width: 320px) {
+  .contactModal__content__header {
+    height: 290px;
+    align-items: flex-end;
+  }
+}
 .contactModal__content__header__closeIcon {
   cursor: pointer;
   align-self: start;
