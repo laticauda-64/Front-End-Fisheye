@@ -14,8 +14,6 @@ export default class LightboxModal {
         // Bind this context for eventListenners
         this.manageKeyPress = this.manageKeyPress.bind(this);
         this.deleteModal = this.deleteModal.bind(this);
-
-        console.log(this.currentMedia);
     }
 
     buildMediaHtml() {
@@ -75,7 +73,6 @@ export default class LightboxModal {
     }
 
     deleteModal() {
-        console.log(this);
         document.querySelector('.lightBoxModal').remove();
         document.documentElement.removeEventListener('keydown', this.manageKeyPress);
     }
