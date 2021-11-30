@@ -17,6 +17,7 @@ class App {
         this._store = {
             photographerInfo: {},
             photographerWork: [],
+            currentLikesId: [],
             totalLikes: 0,
         };
     }
@@ -43,8 +44,7 @@ class App {
         new OpenLightBoxModal().addListeners(this._store.photographerWork);
 
         // Handle events : likes system
-        const handleLikes = new Likes(this._store.totalLikes);
-        handleLikes.init();
+        new Likes(this._store).init();
     }
 }
 

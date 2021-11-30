@@ -16,7 +16,7 @@ export default class MediaVideo {
             </a>
             <div class="displayMediaSection__mediaCard__desc">
                 <p class="displayMediaSection__mediaCard__desc__title">${title}</p>
-                <p class="displayMediaSection__mediaCard__desc__likes" aria-label="likes" data-liked=false>${likes}</p>
+                <p class="displayMediaSection__mediaCard__desc__likes" aria-label="likes" data-id=${id}>${likes}</p>
             </div>
         </article>
         `;

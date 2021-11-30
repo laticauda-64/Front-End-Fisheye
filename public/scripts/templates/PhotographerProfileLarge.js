@@ -3,13 +3,14 @@
 /* * * * * * * * * * * * * * * * * * * * * */
 
 export default class PhotographerProfileLarge {
-    constructor(infos) {
-        this._infos = infos;
+    constructor(store) {
+        this._infos = store;
         this.$main = document.getElementById('main');
     }
 
     render() {
-        const { name, city, country, tagline, price, portrait, totalLikes } = this._infos;
+        const { name, city, country, tagline, price, portrait } = this._infos.photographerInfo;
+        const totalLikes = this._infos.totalLikes;
 
         // Top card
         const card = `

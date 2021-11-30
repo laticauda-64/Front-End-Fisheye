@@ -2,9 +2,14 @@
 /*  Filter field on Photograph page  */
 /* * * * * * * * * * * * * * * * * * */
 
+import DisplayMediaSection from './DisplayMediaSection.js';
+import OpenLightBoxModal from '../utils/OpenLightboxModal.js';
+import Likes from '../utils/Likes.js';
+
 export default class FilterForm {
-    constructor(work) {
-        this._work = work;
+    constructor(store) {
+        this._store = store;
+        this._work = store.photographerWork;
         this.$wrapper = document.createElement('section');
         this.$main = document.getElementById('main');
 
@@ -179,6 +184,13 @@ export default class FilterForm {
         });
     }
 
+    applyChanges() {
+        document.querySelector('.displayMediaSection').remove();
+        new DisplayMediaSection(this._store).render();
+        new OpenLightBoxModal().addListeners(this._work);
+        new Likes(this._store).init();
+    }
+
     onChangeFilterData() {
         // Reorder displayMedia section when select filter change
 
@@ -188,49 +200,21 @@ export default class FilterForm {
             if (e.target.value === this.lastOptionChecked) {
                 return;
             }
-            const $mediaCardsNodes = Array.from(document.querySelectorAll('.displayMediaSection__mediaCard'));
-
-            console.log($mediaCardsNodes);
 
             // Change state & nodes order for each case
             switch (e.target.value) {
                 case 'popular':
                     this._work.sort((a, b) => b.likes - a.likes);
-                    $mediaCardsNodes.sort(
-                        (a, b) =>
-                            parseInt(b.querySelector('.displayMediaSection__mediaCard__desc__likes').textContent) -
-                            parseInt(a.querySelector('.displayMediaSection__mediaCard__desc__likes').textContent)
-                    );
-                    $mediaCardsNodes.forEach((e, i) => {
-                        e.style.order = i;
-                    });
+                    this.applyChanges();
                     break;
                 case 'date':
-                    this._work.sort((a, b) => b.date - a.date);
-
-                    $mediaCardsNodes.sort((a, b) => {
-                        const first = parseInt(a.dataset.date);
-                        const second = parseInt(b.dataset.date);
-                        return second - first;
-                    });
-
-                    $mediaCardsNodes.forEach((e, i) => {
-                        e.style.order = i;
-                    });
-
+                    this._work.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
+                    this.applyChanges();
                     break;
                 case 'title':
                     this._work.sort((a, b) => a.title.localeCompare(b.title));
-                    $mediaCardsNodes.sort((a, b) => {
-                        return a
-                            .querySelector('.displayMediaSection__mediaCard__desc__title')
-                            .textContent.localeCompare(b.querySelector('.displayMediaSection__mediaCard__desc__title').textContent);
-                    });
-                    $mediaCardsNodes.forEach((e, i) => {
-                        e.style.order = i;
-                    });
-
-                // Change the main state in app for LigthBox modal correct order display
+                    this.applyChanges();
+                    break;
             }
         });
     }

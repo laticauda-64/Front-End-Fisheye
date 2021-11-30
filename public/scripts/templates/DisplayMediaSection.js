@@ -4,8 +4,8 @@
 
 import mediaFactory from '../models/factories/mediaFactory.js';
 export default class DisplayMediaSection {
-    constructor(data) {
-        this._photographerWork = data;
+    constructor(store) {
+        this._photographerWork = store.photographerWork;
         this.$main = document.getElementById('main');
     }
 

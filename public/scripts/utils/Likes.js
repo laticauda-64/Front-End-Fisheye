@@ -3,22 +3,33 @@
 /* * * * * * * * * * * * * * * * * * */
 
 export default class Likes {
-    constructor(likes) {
-        this._totalLikes = likes;
+    constructor(store) {
+        this._store = store;
+        console.log(this._store);
+
         this.$totalLikes = document.querySelector('.photographer__stickyMiniBar__likes');
         this.$likesContainer = document.querySelectorAll('.displayMediaSection__mediaCard__desc__likes');
     }
     updateLikes(action, node) {
         let nodeLikes = parseInt(node.textContent);
         node.textContent = nodeLikes + (action === 'INC' ? 1 : -1);
-        this._totalLikes = this._totalLikes + (action === 'INC' ? 1 : -1);
+        this._store.totalLikes = this._store.totalLikes + (action === 'INC' ? 1 : -1);
         this.render();
     }
 
     handleClick = (e) => {
-        const isClicked = e.target.dataset.liked === 'true';
+        const mediaId = e.target.dataset.id;
+        let isClicked;
+        if (this._store.currentLikesId.indexOf(mediaId) < 0) {
+            this._store.currentLikesId.push(mediaId);
+            isClicked = false;
+        } else {
+            isClicked = true;
+            this._store.currentLikesId.splice(this._store.currentLikesId.indexOf(mediaId), 1);
+        }
+
         this.updateLikes(isClicked ? 'DEC' : 'INC', e.target);
-        e.target.dataset.liked = !isClicked;
+        console.log(this._store);
     };
 
     init() {
@@ -26,6 +37,7 @@ export default class Likes {
     }
 
     render() {
-        this.$totalLikes.textContent = this._totalLikes;
+        this.$totalLikes.textContent = this._store.totalLikes;
+        console.log(this._store);
     }
 }

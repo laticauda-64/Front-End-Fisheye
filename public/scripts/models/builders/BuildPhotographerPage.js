@@ -3,14 +3,14 @@ import FilterForm from '../../templates/FilterForm.js';
 import DisplayMediaSection from '../../templates/DisplayMediaSection.js';
 
 export default class BuildPhotographerPage {
-    constructor({ photographerInfo, photographerWork, totalLikes }) {
+    constructor(store) {
         // Photographer profile top card & static mini bar
-        new PhotographerProfileLarge({ ...photographerInfo, totalLikes }).render();
+        new PhotographerProfileLarge(store).render();
 
         // Filter Field
-        new FilterForm(photographerWork).render();
+        new FilterForm(store).render();
 
         // Photographers display media section
-        new DisplayMediaSection(photographerWork).render();
+        new DisplayMediaSection(store).render();
     }
 }
