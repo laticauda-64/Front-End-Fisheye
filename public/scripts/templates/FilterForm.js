@@ -8,6 +8,9 @@ export default class FilterForm {
         this.$wrapper = document.createElement('section');
         this.$main = document.getElementById('main');
 
+        // Sort element by popularity for first render (default choice)
+        this._work.sort((a, b) => b.likes - a.likes);
+
         // Bind this context to following methods
         this.customizedDropDownMenu = this.customizedDropDownMenu.bind(this);
         this.onChangeFilterData = this.onChangeFilterData.bind(this);
