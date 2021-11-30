@@ -10,11 +10,11 @@ export default class OpenLightBoxModal {
         this.$mediaCards = document.querySelectorAll('.displayMediaSection__mediaCard__link');
     }
 
-    addListeners(data) {
+    addListeners(store) {
         this.$mediaCards.forEach((e) =>
             e.addEventListener('click', function (e) {
                 e.preventDefault();
-                const lightBox = new LightboxModal(this.parentNode.dataset.id, data);
+                const lightBox = new LightboxModal(this.parentNode.dataset.id, store);
                 lightBox.render();
             })
         );

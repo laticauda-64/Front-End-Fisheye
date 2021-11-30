@@ -187,7 +187,7 @@ export default class FilterForm {
     applyChanges() {
         document.querySelector('.displayMediaSection').remove();
         new DisplayMediaSection(this._store).render();
-        new OpenLightBoxModal().addListeners(this._work);
+        new OpenLightBoxModal().addListeners(this._store);
         new Likes(this._store).init();
     }
 

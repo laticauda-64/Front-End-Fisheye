@@ -42,7 +42,7 @@ class App {
         new SwitchContactModal().addListeners();
 
         // Handle events : lightbox modal on each media
-        new OpenLightBoxModal().addListeners(this._store.photographerWork);
+        new OpenLightBoxModal().addListeners(this._store);
 
         // Handle events : likes system
         new Likes(this._store).init();

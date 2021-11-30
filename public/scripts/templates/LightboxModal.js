@@ -3,11 +3,11 @@
 /* * * * * * * * * * * * * * * * * * * */
 
 export default class LightboxModal {
-    constructor(mediaId, data) {
+    constructor(mediaId, store) {
         // Get the list of all photographers medias
-        this._photographerWork = data;
+        this._photographerWork = store.photographerWork;
         // Extract current media to show with data-id
-        this.currentMedia = data.find((e) => e.id == mediaId);
+        this.currentMedia = this._photographerWork.find((e) => e.id == mediaId);
         // Spot the index of current image, for handling navigation
         this._currentIndex = this._photographerWork.findIndex((e) => e.id === this.currentMedia.id);
 
@@ -28,14 +28,14 @@ export default class LightboxModal {
 
     buildHtml() {
         const content = `
-            <div class="lightBoxModal" aria-label="${this.currentMedia.title}, closeup view">
+            <div class="lightBoxModal" aria-label="${this._photographerWork[this._currentIndex].title}, closeup view">
                 <button class="lightBoxModal__prevButton" aria-label="Précédent" tabindex="1">Image précédente</button>
                     <div class="lightBoxModal__mainContainer">
                         <div class="lightBoxModal__imgContainer">
                             ${this.buildMediaHtml()}
                             <button class="lightBoxModal__closeButton" aria-label="Fermer" tabindex="0">Close dialog</button>
                         </div>
-                        <h2 class="lightBoxModal__mediaDesc">${this.currentMedia.title}</h2>
+                        <h2 class="lightBoxModal__mediaDesc">${this._photographerWork[this._currentIndex].title}</h2>
                     </div>
                 <button class="lightBoxModal__nextButton" aria-label="Suivant" tabindex="2">Image suivante</button>
             </div>
@@ -54,6 +54,8 @@ export default class LightboxModal {
 
         this.deleteModal();
         this.render();
+        console.log(this._photographerWork);
+        console.log(this._currentIndex);
     }
 
     manageKeyPress(e) {
