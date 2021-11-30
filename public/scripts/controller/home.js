@@ -1,7 +1,7 @@
 /* * * * * * * * * * * * * * * * * * * */
 /*  Main JS entry point for Home page  */
 /* * * * * * * * * * * * * * * * * * * */
-import { GetPhotographers } from '../models/Api.js';
+import GetPhotographers from '../models/GetPhotographers.js';
 import BuildIndexPage from '../models/builders/BuildIndexPage.js';
 
 class App {

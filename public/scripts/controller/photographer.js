@@ -1,4 +1,5 @@
-import { GetPhotographers, GetMedias } from '../models/Api.js';
+import GetPhotographers from '../models/GetPhotographers.js';
+import GetMedias from '../models/GetMedias.js';
 import SwitchContactModal from '../utils/switchContactForm.js';
 import Likes from '../utils/Likes.js';
 import BuildPhotographerPage from '../models/builders/BuildPhotographerPage.js';
