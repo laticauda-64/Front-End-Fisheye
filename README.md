@@ -16,23 +16,6 @@ npm run sass
 
 Servir le fichier index.html avec un serveur web (Live Server ?).
 
-## Plan du projet
-
--   [x] Mettre en place la structure du projet et les dépendances/plugins et configurer le tout (sass, eslint, git, etc...)
--   [x] Refaire un HTML propre avec tous les blocs nécessaires
--   [x] Revoir le SASS et créer tous les blocs/éléments/variables nécéssaires
--   [x] Créer l'architecture des dossiers/fichiers javascript pour respecter les patterns demandés
--   [x] Mettre en place un système de routing pour la page "photographer.html" avec des query strings >> photographer.html?id=587
--   [x] Rajouter une petite icone indicative pour les vidéos
--   [x] Gérer l'affichage des photos/vidéos dans UNE lighbox
--   [x] Finir le formulaire (html/css) et gérer le javascript associé
--   [x] Finir le css du select filter et coder la fonctionnalité en JS
--   [x] Faire la "mini info bar" en sticky right bottom sur la page photogapher
--   [x] Construire le système de like sur les mediaCards
--   [x] Corriger BUG compteur de likes HS quand filtre
--   [x] Mettre en place l'accessibilité clavier
--   [ ] Faire le responsive tablette + mobile (finir contact form mobile)
-
 ## Consignes détaillées
 
 <details>
