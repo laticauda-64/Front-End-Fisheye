@@ -54,8 +54,6 @@ export default class LightboxModal {
 
         this.deleteModal();
         this.render();
-        console.log(this._photographerWork);
-        console.log(this._currentIndex);
     }
 
     manageKeyPress(e) {
